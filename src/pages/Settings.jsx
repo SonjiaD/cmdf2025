@@ -35,7 +35,7 @@ const Settings = () => {
 
       {/* Content Section */}
       <div style={styles.content}>
-        <h1 className="settings-title">Settings Information </h1>
+        <h1 className="settings-title">Settings Information</h1>
         <p style={styles.description}>
           Manage your account settings and view your login history. Below, you
           can see past login attempts, including the date, time, and device
@@ -81,21 +81,24 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: "100vw",
+    width: "100%",
+    minHeight: "100vh", // Ensure the wrapper takes full height
+    padding: "20px", // Add some padding to prevent elements from touching the edges
   },
   banner: {
-    width: "100vw",
+    width: "100%",
     height: "auto",
     objectFit: "cover",
-    marginTop: "50px" /* Added margin above the banner */,
+    marginTop: "50px", // Added margin above the banner
     borderRadius: "0px",
   },
   content: {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    width: "70%",
-    maxWidth: "1400px",
+    width: "100%", // Make sure content takes the full width
+    maxWidth: "1200px", // Limit the max width of content
+    padding: "20px", // Add padding inside the content section
   },
   description: {
     textAlign: "left",

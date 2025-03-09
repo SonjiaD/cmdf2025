@@ -42,13 +42,13 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100vw",
+        width: "100%",
     },
     banner: {
-        width: "100vw", 
+        width: "100%",  // Use 100% to make sure it spans the full width
         height: "auto", 
         objectFit: "cover",
-        marginTop: "50px", // Added margin above the banner
+        marginTop: "50px", // Margin above the banner
         borderRadius: "0px",
     },
     content: {

@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6, p, span, label, strong, em {
   color: #3D2B29; /* Apply dark brown to all text elements */
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
