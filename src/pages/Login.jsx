@@ -13,7 +13,12 @@ const Login = () => {
                 username,
                 password
             });
+
+            // If login is successful, display success message
             setMessage(response.data.message);
+
+            // You can also store the username in localStorage to persist login state
+            localStorage.setItem("user", JSON.stringify({ username }));
         } catch (error) {
             setMessage(error.response?.data?.message || "Login failed");
         }
