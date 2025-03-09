@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { run } from "../index.js";
 
-const CloudFlare = ({ inputValue, onBotResponse, onLoadingChange }) => {
+const CloudFlare = ({
+  inputValue,
+  onBotResponse,
+  onLoadingChange,
+  onFetchComplete,
+}) => {
   const [responseData, setResponseData] = useState(null);
   const [error, setError] = useState(null);
-
+  const [completeFetch, setCompleteFetch] = useState(false);
   useEffect(() => {
     if (inputValue) {
+      setCompleteFetch(false);
+
       const input = {
         messages: [
           {
@@ -25,25 +32,29 @@ const CloudFlare = ({ inputValue, onBotResponse, onLoadingChange }) => {
         onLoadingChange(true);
 
         try {
-          const response = await run("@cf/meta/llama-3-8b-instruct", input);
-          setResponseData(response);
-          onBotResponse(response.result.response); // Send bot response to parent
+          if (!completeFetch) {
+            const response = await run("@cf/meta/llama-3-8b-instruct", input);
+            setResponseData(response);
+            setCompleteFetch(true);
+            onBotResponse(response.result.response);
+          }
         } catch (error) {
           setError(error);
         } finally {
           onLoadingChange(false);
+          onFetchComplete();
         }
       };
 
       fetchData();
     }
-  }, [inputValue, onBotResponse, onLoadingChange]);
+  }, [inputValue]);
 
   return (
     <div>
       {error && <div>Error: {error.message}</div>}
       {!responseData ? (
-        <div>Loading...</div>
+        <div className="loading">Thinking...</div>
       ) : (
         <div>{responseData.result.response}</div>
       )}
