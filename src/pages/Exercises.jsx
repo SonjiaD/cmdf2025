@@ -1,15 +1,18 @@
 import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 function Exercises() {
+  const navigate = useNavigate();
+
   return <>
     <h3>What would you like to work on today?</h3>
     <div className="board-row">
-        <button className="square">Articulation</button>
-        <button className="square">Fluency</button>
+        <button onClick={() => navigate("/articulation")}>Articulation</button>
+        <button onClick={() => navigate("/fluency")}>Fluency</button>
       </div>
       <div className="board-row">
-        <button className="square">Speaking</button>
-        <button className="square">Understanding</button>
+        <button onClick={() => navigate("/language")}>Language</button>
+        <button onClick={() => navigate("/understanding")}>Understanding</button>
       </div>
     </>;
 }
