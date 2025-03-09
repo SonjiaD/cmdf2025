@@ -14,7 +14,6 @@
   padding: 20px 50px; 
 }
 
-
 .navbar ul {
   list-style: none;
   display: flex;
@@ -25,11 +24,15 @@
 }
 
 .navbar a {
-  color: rgb(0, 0, 0);
+  color: #3D2B29; /* Dark brown */
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
   padding: 10px 15px; 
+}
+
+.navbar a:hover {
+  color: #5A4543; /* Slightly lighter brown for hover effect */
 }
 
 .navbar-Title {
@@ -37,6 +40,7 @@
   font-weight: bold;
   padding-right: 75px;
   white-space: nowrap; 
+  color: #3D2B29; /* Dark brown */
 }
 
 .navbar img {

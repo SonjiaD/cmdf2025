@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #3D2B29; /* Dark brown font color */
   background-color: #242424;
 
   font-synthesis: none;
@@ -13,25 +13,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #3D2B29; /* Dark brown links */
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #2A1D1B; /* Even darker brown on hover */
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  color: #3D2B29; /* Apply dark brown to body text */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4, h5, h6, p, span, label, strong, em {
+  color: #3D2B29; /* Apply dark brown to all text elements */
 }
 
 button {
@@ -44,9 +42,10 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #3D2B29; /* Dark brown button text */
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #3D2B29;
 }
 button:focus,
 button:focus-visible {
@@ -55,11 +54,11 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #3D2B29; /* Dark brown text in light mode */
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #2A1D1B; /* Even darker brown */
   }
   button {
     background-color: #f9f9f9;
