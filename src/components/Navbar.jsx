@@ -6,8 +6,9 @@ function Navbar() {
       <h2 style={styles.logo}>MySite</h2>
       <ul style={styles.navLinks}>
         <li><Link to="/" style={styles.link}>Home</Link></li>
-        <li><Link to="/about" style={styles.link}>About</Link></li>
-        <li><Link to="/contact" style={styles.link}>Contact</Link></li>
+        <li><Link to="/exercises" style={styles.link}>Exercises</Link></li>
+        <li><Link to="/progress" style={styles.link}>Progress</Link></li>
+        <li><Link to="/settings" style={styles.link}>Settings</Link></li>
       </ul>
     </nav>
   );

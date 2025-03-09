@@ -7,12 +7,16 @@ function Home() {
   return <h1>Home Page</h1>;
 }
 
-function About() {
-  return <h1>About Us</h1>;
+function Exercises() {
+  return <h1>Exercises</h1>;
 }
 
-function Contact() {
-  return <h1>Contact Us</h1>;
+function Progress() {
+  return <h1>Progress</h1>;
+}
+
+function Settings() {
+  return <h1>Settings</h1>;
 }
 
 function App() {
@@ -51,8 +55,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/progress" element={<Progress />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter><div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
         <h1 className="text-3xl font-bold mb-4">Speech to Text</h1>
