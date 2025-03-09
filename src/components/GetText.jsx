@@ -54,7 +54,7 @@ const GetText = ({ onTranscriptChange, onStopRecording }) => {
           isRecording ? "bg-red-500" : "bg-blue-500"
         }`}
       >
-        {isRecording ? "Stop Recording" : "Start Recording"}
+        {isRecording ? "Stop Speaking" : "Start Speaking"}
       </button>
     </div>
   );

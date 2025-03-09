@@ -2,6 +2,7 @@
 .max-w-md {
   max-width: 480px;
   max-height: 500px;
+  min-height: 500px;
   width: 100%;
   background-color: var(--white);
   overflow-y: auto;
@@ -11,11 +12,21 @@
   display: flex;
   flex-direction: column;
   height: 80%;
-  position: relative;
-  margin: auto;
-  opacity: 0;
-  transform: scale(0.6) translateY(20px); /* Start smaller */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Longer transition */
+
+  position: fixed;
+  bottom: 20px;
+  margin-left: 800px;
+  z-index: 9999;
+
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+
+  cursor: grab;
+}
+
+.max-w-md:active {
+  cursor: grabbing;
 }
 
 .max-w-md.visible {
@@ -127,14 +138,6 @@ h2 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #333;
-}
-
-/* loading */
-div > .loading {
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  margin-top: 20px;
 }
 
 /* scroll */
