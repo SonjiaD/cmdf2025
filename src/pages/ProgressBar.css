@@ -1,0 +1,17 @@
+.progress-container {
+    width: 50%;
+    background-color: #e0e0df;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 25px;
+    margin: 10px 0;
+  }
+  
+  .progress-filler {
+    height: 100%;
+    background-color: #4caf50;
+    text-align: right;
+    line-height: 25px;
+    transition: width 0.5s ease-in-out;
+  }
+  

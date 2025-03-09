@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./ProgressBar.css";
 
 // Levenshtein Distance function to compare strings (text comparison)
 const getLevenshteinDistance = (a, b) => {
@@ -83,7 +84,7 @@ const SpeechToText = () => {
   };
 
   const increaseProgress = () => {
-    setProgress((prev) => (prev >= 5 ? 5 : prev + 1));
+    setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
   };
 
   const stopRecording = () => {
@@ -110,9 +111,8 @@ const SpeechToText = () => {
       <h2 className="text-2xl font-bold">🎙️ Speech-to-Text Practice</h2>
 
       {/* Display progress bar */}
-      <div style={styles.container}>
-        <div style={{ ...styles.filler, width: `${progress}%` }}>
-          <span style={styles.label}>{progress}%</span>
+      <div className="progress-container">
+        <div className="progress-filler" style={{width: `${progress}%` }}>
         </div>
       </div>
       
@@ -151,29 +151,6 @@ const SpeechToText = () => {
       
     </div>
   );
-};
-
-const styles = {
-  container: {
-    width: "100%",
-    backgroundColor: "#e0e0df",
-    borderRadius: "5px",
-    overflow: "hidden",
-    height: "25px",
-    margin: "10px 0"
-  },
-  filler: {
-    height: "100%",
-    backgroundColor: "#4caf50",
-    textAlign: "right",
-    lineHeight: "25px",
-    transition: "width 0.5s ease-in-out"
-  },
-  label: {
-    padding: "5px",
-    color: "white",
-    fontWeight: "bold"
-  }
 };
 
 export default SpeechToText;
