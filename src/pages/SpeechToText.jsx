@@ -21,9 +21,15 @@ const getLevenshteinDistance = (a, b) => {
   return tmp[a.length][b.length];
 };
 
-// List of words to practice
-const words = ["cat", "dog", "apple", "banana", "grape"];
-
+// List of longer tongue-twisters to practice
+const words = [
+    "Peter Piper picked a peck of pickled peppers",
+    "She sells seashells by the seashore",
+    "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+    "Fuzzy Wuzzy was a bear, Fuzzy Wuzzy had no hair",
+    "Betty Botter bought some butter, but she said the butter’s bitter"
+  ];
+  
 const SpeechToText = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState("");
@@ -100,7 +106,7 @@ const SpeechToText = () => {
       
       {/* Display current target word */}
       <div className="mt-4">
-        <h3 className="text-xl">Target Word: <span className="font-semibold">{targetWord}</span></h3>
+        <h3 className="text-xl">Target Phrase: <span className="font-semibold">{targetWord}</span></h3>
       </div>
 
       <button
@@ -127,7 +133,7 @@ const SpeechToText = () => {
           onClick={handleNextWord}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
         >
-          Next Word
+          Next Phrase
         </button>
       )}
     </div>
