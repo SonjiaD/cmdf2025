@@ -1,82 +1,62 @@
-import React, { useState, useRef } from "react";
-import RecordRTC from "recordrtc";
+import React, { useState, useEffect } from "react";
 
 const SpeechToText = () => {
-  const [text, setText] = useState("");
   const [isRecording, setIsRecording] = useState(false);
-  const recorderRef = useRef(null);
+  const [transcript, setTranscript] = useState("");
+  const [recognition, setRecognition] = useState(null);
 
-  const API_KEY = "44102e14281a4bb7bdee0a893c63691d"; // 🔑 Replace with your key
+  useEffect(() => {
+    if ("webkitSpeechRecognition" in window) {
+      const speechRecognition = new window.webkitSpeechRecognition();
+      speechRecognition.continuous = true;
+      speechRecognition.interimResults = true;
+      speechRecognition.lang = "en-US";
 
-  const startRecording = async () => {
-    setIsRecording(true);
+      speechRecognition.onresult = (event) => {
+        let finalTranscript = "";
+        for (let i = 0; i < event.results.length; i++) {
+          finalTranscript += event.results[i][0].transcript;
+        }
+        setTranscript(finalTranscript);
+        console.log(event);
+      };
 
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const recorder = new RecordRTC(stream, { type: "audio" });
-      recorder.startRecording();
-      recorderRef.current = recorder;
-    } catch (error) {
-      console.error("Microphone access denied:", error);
-      setIsRecording(false);
+      speechRecognition.onerror = (event) => {
+        console.error("Speech recognition error", event.error);
+      };
+
+      setRecognition(speechRecognition);
+    } else {
+      console.warn("Web Speech API is not supported in this browser.");
+    }
+  }, []);
+
+  const startRecording = () => {
+    if (recognition) {
+      setIsRecording(true);
+      recognition.start();
+    } else {
+      alert("Speech recognition is not supported in this browser.");
     }
   };
 
-  const stopRecording = async () => {
-    setIsRecording(false);
-    const recorder = recorderRef.current;
-    recorder.stopRecording(async () => {
-      const audioBlob = recorder.getBlob();
-      const formData = new FormData();
-      formData.append("audio", audioBlob);
-
-      const uploadResponse = await fetch("https://api.assemblyai.com/v2/upload", {
-        method: "POST",
-        headers: { "authorization": API_KEY },
-        body: formData,
-      });
-
-      const uploadData = await uploadResponse.json();
-      console.log("Upload URL:", uploadData.upload_url);
-
-      const transcribeResponse = await fetch("https://api.assemblyai.com/v2/transcript", {
-        method: "POST",
-        headers: {
-          "authorization": API_KEY,
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ audio_url: uploadData.upload_url }),
-      });
-
-      const transcribeData = await transcribeResponse.json();
-      console.log("Transcription ID:", transcribeData.id);
-
-      // Poll for the transcription result
-      let transcription = "";
-      while (!transcription) {
-        await new Promise((resolve) => setTimeout(resolve, 5000));
-        const resultResponse = await fetch(`https://api.assemblyai.com/v2/transcript/${transcribeData.id}`, {
-          headers: { "authorization": API_KEY },
-        });
-        const resultData = await resultResponse.json();
-        if (resultData.status === "completed") {
-          transcription = resultData.text;
-          setText(transcription);
-        }
-      }
-    });
+  const stopRecording = () => {
+    if (recognition) {
+      setIsRecording(false);
+      recognition.stop();
+    }
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Speech to Text Converter</h2>
-      <button onClick={startRecording} disabled={isRecording}>
-        {isRecording ? "Recording..." : "Start Recording"}
+    <div className="p-4 text-center">
+      <h2 className="text-2xl font-bold">🎙️ Speech-to-Text</h2>
+      <button
+        onClick={isRecording ? stopRecording : startRecording}
+        className={`mt-4 px-4 py-2 text-white rounded ${isRecording ? "bg-red-500" : "bg-blue-500"}`}
+      >
+        {isRecording ? "Stop Recording" : "Start Recording"}
       </button>
-      <button onClick={stopRecording} disabled={!isRecording}>
-        Stop Recording
-      </button>
-      <p><strong>Converted Text:</strong> {text}</p>
+      <p className="mt-4 text-lg">{transcript ? `📝 ${transcript}` : "No transcription yet..."}</p>
     </div>
   );
 };

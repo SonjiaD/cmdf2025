@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Exercises from "./pages/Exercises";
 import Settings from "./pages/Settings";
 import Progress from "./pages/Progress";
-import SpeechToText from "./pages/SpeechToText"; // ✅ Import
+import SpeechToText from "./pages/SpeechToText";
 
 
 import Articulation from "./pages/Categories/Articulation";
@@ -23,6 +23,8 @@ function App() {
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/speech-to-text" element={<SpeechToText />} />
+
       </Routes>
     </BrowserRouter>
   );
