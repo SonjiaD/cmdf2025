@@ -105,12 +105,16 @@ button {
   outline: none; /* Remove default focus outline */
 }
 
+.record:hover {
+  transform: scale(1.05);
+}
+
 button:focus {
   outline: none; /* Remove focus outline */
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .bg-blue-500 {
