@@ -65,8 +65,8 @@ const styles = {
     borderRadius: "5px",
     overflow: "hidden",
     height: "60px",
-    width: "50%", // Centered and adaptive width
-    maxWidth: "1077px",
+    width: "70%", // Centered and adaptive width
+    maxWidth: "1400px",
     margin: "10px 0"
   },
   filler: {
