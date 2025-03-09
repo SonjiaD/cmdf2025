@@ -23,22 +23,27 @@ const getLevenshteinDistance = (a, b) => {
   return tmp[a.length][b.length];
 };
 
-// List of longer tongue-twisters to practice
+// List of consonant & vowel pairings
 const words = [
-    "Peter Piper picked a peck of pickled peppers",
-    "She sells seashells by the seashore",
-    "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
-    "Fuzzy Wuzzy was a bear, Fuzzy Wuzzy had no hair",
-    "Betty Botter bought some butter, but she said the butter’s bitter"
+    "Ba, Be, Bi, Bo, Bu",
+    "Ca, Ce, Ci, Co, Cu",
+    "Da, De, Di, Do, Du",
+    "Fa, Fe, Fi, Fo, Fu",
+    "Ga, Ge, Gi, Go, Gu",
+    "Ha, He, Hi, Ho, Hu",
+    "Ra, Re, Ri, Ro, Ru",
+    "Sa, Se, Si, So, Su",
+    "Ta, Te, Ti, To, Tu",
   ];
   
-const SpeechToText = () => {
+const VowelRep = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [recognition, setRecognition] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
   const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
+  const [currentDone, setCurrentDone] = useState(0); 
   const { progress, increaseProgress, setMatchAccuracy } = useProgressStore();
 
   useEffect(() => {
@@ -94,10 +99,17 @@ const SpeechToText = () => {
     }
   };
 
+  // calculate a random int between the 0th index and the length of the list - 1
+  function randomInt() {
+    return Math.floor(Math.random() * (words.length - 1));
+  }
+
   const handleNextWord = () => {
-    if (currentWordIndex < words.length - 1) {
-      const nextIndex = currentWordIndex + 1;
+    if (currentDone < 4) {
+      const nextIndex = randomInt();
+      const nextDone = currentDone + 1;
       setCurrentWordIndex(nextIndex);
+      setCurrentDone(nextDone);
       setTargetWord(words[nextIndex]);
       setTranscript("");
       setAccuracy(null);
@@ -153,4 +165,4 @@ const SpeechToText = () => {
   );
 };
 
-export default SpeechToText;
+export default VowelRep;

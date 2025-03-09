@@ -12,6 +12,7 @@
   flex-direction: column;
   height: 80%;
   position: relative;
+  margin: auto;
 }
 
 /* message list */
