@@ -48,6 +48,16 @@ function Progress() {
 }
 
 const styles = {
+
+  banner: {
+    width: "1440px", 
+    height: "auto", 
+    display: "block",
+    objectFit: "cover",
+    margin: "0", 
+    borderRadius: "0px"
+  },
+
   container: {
     width: "100%",
     backgroundColor: "#e0e0df",
