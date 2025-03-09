@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import useProgressStore from "../useProgressStore";
 
 function Progress() {
-  //const points = useProgressStore((state) => state.points);
   const { points, totalAccuracy, attempts } = useProgressStore();
 
   // calculate average accuracy for the day
@@ -11,7 +10,6 @@ function Progress() {
   // calculate average accuracy for the day
   const averageWeeklyAccuracy = attempts > 0 ? ((totalAccuracy / attempts)/7).toFixed(0) : 0;
 
-  // buttons are temporary until exercises are implemented
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h1>Daily Progress</h1>

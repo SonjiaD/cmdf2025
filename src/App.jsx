@@ -7,6 +7,7 @@ import Settings from "./pages/Settings";
 import Progress from "./pages/Progress";
 import SpeechToText from "./pages/SpeechToText";
 import Breathe from "./pages/Breathe";
+import VowelRep from "./pages/VowelRep";
 import "./App.css";
 import Login from "./pages/Login";
 
@@ -57,6 +58,7 @@ function MainContent({ isAuthenticated }) {
             <Route path="/understanding" element={<Understanding />} />
             <Route path="/speech-to-text" element={<SpeechToText />} />
             <Route path="/breathe" element={<Breathe />} />
+            <Route path="/vowelrep" element={<VowelRep />} />
           </>
         )}
       </Routes>
