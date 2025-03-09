@@ -74,8 +74,8 @@ const SpeechToTextAndCloudFlare = () => {
               </div>
             ))}
             {isLoading && (
-              <div className="text-center my-2">
-                <p>Loading...</p>
+              <div className="text-center my-2 load">
+                <p>Thinking...</p>
               </div>
             )}
           </div>
