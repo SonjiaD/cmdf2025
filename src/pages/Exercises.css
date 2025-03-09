@@ -1,0 +1,57 @@
+
+.exercises-Title{
+    font-size: 32px;
+    font-weight: 300;
+    padding-top: 100px;
+}
+
+/* Styling for board rows */
+.board-row {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    margin-bottom: 20px; 
+  }
+  
+  /* Styling for each button */
+  .board-box {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-end; 
+    width: 500px;
+    height: 300px;
+    background-color: #F8D3C3; 
+    border-radius: 30px;
+    padding: 16px 27px;
+    position: relative; 
+    border: none; 
+  }
+  
+  .board-box span {
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 10px; 
+    left: 10px;
+    font-size: 36px;
+    font-weight: 400;
+    padding:30px;
+
+  }
+  
+  /*indivdual styling*/
+  .board-box-articulation{
+    background-color: #F8D3C3;
+  }
+
+  .board-box-fluency{
+    background-color: #D2DED4;
+  }
+
+  .board-box-language{
+    background-color: #E0E2CC;
+  }
+
+
+  .board-box-understanding{
+    background-color: #FEDBB1;
+  }
