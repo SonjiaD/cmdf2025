@@ -23,50 +23,6 @@ function Home() {
 
 {/* Middle Rotating Banner Section */}
 <div className="middle-banner">
-  <div className="marquee">
-    <span className="emoji spin">🗣️</span>
-    <span className="banner-text"> Speak Clearly </span>
-    <span className="emoji spin">🎤</span>
-    <span className="banner-text"> Track Your Progress </span>
-    <span className="emoji spin">😊</span>
-    <span className="banner-text"> Build Confidence </span>
-    <span className="emoji spin">📈</span>
-    <span className="banner-text"> AI-Powered Feedback </span>
-    <span className="emoji spin">🔊</span>
-    <span className="banner-text"> Strengthen Your Voice </span>
-    <span className="emoji spin">💬</span>
-    <span className="banner-text"> Express Yourself </span>
-    <span className="emoji spin">🧠</span>
-    <span className="banner-text"> Mindful Speaking </span>
-    <span className="emoji spin">🗣️</span>
-    <span className="banner-text"> Speak Clearly </span>
-    <span className="emoji spin">🎤</span>
-    <span className="banner-text"> Track Your Progress </span>
-    <span className="emoji spin">😊</span>
-    <span className="banner-text"> Build Confidence </span>
-    <span className="emoji spin">📈</span>
-    <span className="banner-text"> AI-Powered Feedback </span>
-    <span className="emoji spin">🔊</span>
-    <span className="banner-text"> Strengthen Your Voice </span>
-    <span className="emoji spin">💬</span>
-    <span className="banner-text"> Express Yourself </span>
-    <span className="emoji spin">🧠</span>
-    <span className="banner-text"> Mindful Speaking </span>
-    <span className="emoji spin">🗣️</span>
-    <span className="banner-text"> Speak Clearly </span>
-    <span className="emoji spin">🎤</span>
-    <span className="banner-text"> Track Your Progress </span>
-    <span className="emoji spin">😊</span>
-    <span className="banner-text"> Build Confidence </span>
-    <span className="emoji spin">📈</span>
-    <span className="banner-text"> AI-Powered Feedback </span>
-    <span className="emoji spin">🔊</span>
-    <span className="banner-text"> Strengthen Your Voice </span>
-    <span className="emoji spin">💬</span>
-    <span className="banner-text"> Express Yourself </span>
-    <span className="emoji spin">🧠</span>
-    <span className="banner-text"> Mindful Speaking </span>
-  </div>
 </div>
 
 

@@ -16,6 +16,7 @@ function Exercises() {
         <AnimatedHeading className="title" text="What would you like to learn?" />
       </div>
     </div>      
+
 <div className="board-row">
         <button
           className="board-box board-box-articulation"

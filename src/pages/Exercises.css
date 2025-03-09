@@ -13,7 +13,7 @@
 }
 
 .title {
-  font-size: 2.0rem;  /* Increased font size for better visibility */
+  font-size: 1.5rem;  /* Increased font size for better visibility */
   color: #3D2B29;     /* Dark brown color */
   margin: 0;          /* Removes default margin */
 }
@@ -71,3 +71,4 @@
 .board-box-understanding {
   background-color: #FEDBB1;
 }
+
