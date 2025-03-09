@@ -41,7 +41,7 @@
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: var(--morning-mist);
+  background-color: #d2ded4;
   color: white;
   border: none;
   border-radius: 50%;
@@ -118,14 +118,14 @@ button:hover {
 }
 
 .bg-blue-500 {
-  background-color: var(--morning-mist);
-  color: white;
+  background-color: #d2ded4;
+  color: #3d2b29;
   border: none;
 }
 
 .bg-red-500 {
   background-color: var(--coral-reef);
-  color: white;
+  color: #3d2b29;
   border: none;
 }
 
