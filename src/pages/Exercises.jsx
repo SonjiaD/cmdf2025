@@ -1,50 +1,38 @@
-import React from "react";
+import React from "react"; 
 import { useNavigate } from "react-router-dom";
 import "./Exercises.css";
 import AnimatedHeading from "../components/AnimatedHeading";
-import exerciseBanner from "/src/assets/exerciseBanner.jpg";
-
+import exerciseBanner from "/src/assets/learn.jpg";
 
 function Exercises() {
   const navigate = useNavigate();
 
+  const exercises = [
+    { name: "Articulation", path: "/speech-to-text", description: "Improve speech clarity and pronunciation.", className: "board-box-articulation" },
+    { name: "Fluency", path: "/fluency", description: "Enhance speech flow and reduce stuttering.", className: "board-box-fluency" },
+    { name: "Language", path: "/language", description: "Develop vocabulary and sentence structure.", className: "board-box-language" },
+    { name: "Understanding", path: "/understanding", description: "Improve comprehension and listening skills.", className: "board-box-understanding" }
+  ];
+
   return (
     <>
-      <img className="Banner" src={exerciseBanner} alt="Exercise Banner" />
-      
+      <img className="banner" src={exerciseBanner} alt="Exercise Banner" />
+
       <div className="title-container">
-      <div className="text-container">
         <AnimatedHeading className="title" text="What would you like to learn?" />
       </div>
-    </div>      
 
-<div className="board-row">
-        <button
-          className="board-box board-box-articulation"
-          onClick={() => navigate("/speech-to-text")}
-        >
-          <span>Articulation</span>
-        </button>
-        <button
-          className="board-box board-box-fluency"
-          onClick={() => navigate("/fluency")}
-        >
-          <span>Fluency</span>
-        </button>
-      </div>
-      <div className="board-row">
-        <button
-          className="board-box board-box-language"
-          onClick={() => navigate("/language")}
-        >
-          <span>Language</span>
-        </button>
-        <button
-          className="board-box board-box-understanding"
-          onClick={() => navigate("/understanding")}
-        >
-          <span>Understanding</span>
-        </button>
+      <div className="board">
+        {exercises.map((exercise, index) => (
+          <button 
+            className={`board-box ${exercise.className}`} 
+            key={index} 
+            onClick={() => navigate(exercise.path)}
+          >
+            <span className="exercise-title">{exercise.name}</span>
+            <p className="exercise-description">{exercise.description}</p>
+          </button>
+        ))}
       </div>
     </>
   );
