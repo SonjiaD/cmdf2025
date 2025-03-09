@@ -10,7 +10,7 @@ const getLevenshteinDistance = (a, b) => {
   }
   for (let j = 0; j <= b.length; j++) {
     tmp[0][j] = j;
-    
+
   }
   for (let i = 1; i <= a.length; i++) {
     for (let j = 1; j <= b.length; j++) {
@@ -45,6 +45,8 @@ const VowelRep = () => {
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
   const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
   const [currentDone, setCurrentDone] = useState(0); 
+  const [attempts, setAttempts] = useState(0); // Track number of attempts
+  const [requiredAccuracy, setRequiredAccuracy] = useState(80);
   const { progress, increaseProgress, setMatchAccuracy } = useProgressStore();
 
   useEffect(() => {
@@ -81,6 +83,17 @@ const VowelRep = () => {
       console.warn("Web Speech API is not supported in this browser.");
     }
   }, [targetWord]);
+
+  // Adjust accuracy requirement based on attempts
+  useEffect(() => {
+    if (attempts >= 3) {
+      // Lower accuracy if too many attempts
+      setRequiredAccuracy(70);
+    } else if (attempts === 0) {
+       // Default starting accuracy
+      setRequiredAccuracy(80);
+    }
+  }, [attempts]);
 
   {/*Start recording audio*/}
   const startRecording = () => {
@@ -153,7 +166,7 @@ const VowelRep = () => {
       )}
 
       {/* Button to go to the next word */}
-      {accuracy >= 80 && (
+      {accuracy >= requiredAccuracy && (
         <button
           onClick={function(event){handleNextWord(); increaseProgress();}}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded"

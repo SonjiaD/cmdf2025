@@ -11,7 +11,9 @@ function Language() {
 
     return (
       <div>
-          <h1>Language practice</h1>
+          {/* <h1>Language practice</h1> */}
+          <h1 className="title" style={{ marginTop: "150px" }}>Language practice</h1>
+
           <button className="button button1">Writing</button>
           <button className="button button2" onClick={goToVowelRep}>Vowel Repetition</button>
       </div>

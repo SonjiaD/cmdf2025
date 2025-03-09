@@ -1,224 +1,90 @@
-/* Overall body styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Main container for the login card */
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  /* Styling for the login card */
-  .login-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 40px;
-    width: 350px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    box-sizing: border-box;
-  }
-  
-  /* Title styles */
-  .login-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #3D2B29; /* Dark brown */
-    margin-bottom: 20px;
-  }
-  
-  /* Input field styles */
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: #3D2B29; /* Dark brown */
-    font-family: 'Poppins', sans-serif; /* Added Poppins font */
+/* login.css */
 
-  }
-  /* reCAPTCHA container styling */
-.recaptcha-container {
-    width: 100%;
-    margin: 10px 0;
-  }
-  
-  /* reCAPTCHA styling */
-  .recaptcha {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  /* Button styling */
-  .login-button {
-    background-color: #FFB5B5; /* Light pink */
-    color: #3D2B29; /* Dark brown */
-    padding: 12px 0;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background-color: #ff9a9a; /* Slightly darker pink on hover */
-  }
-  
-  /* Skip button styling */
-  .skip-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 12px;
-    padding: 5px 10px;
-    background-color: #ddd;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .skip-button:hover {
-    background-color: #ccc;
-  }
-  
-  /* Error message styling */
-  .error-message {
-    color: #e74c3c;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  /* Overall body styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Main container for the login card */
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  /* Styling for the login card */
-  .login-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 40px;
-    width: 350px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    box-sizing: border-box;
-  }
-  
-  /* Title styles */
-  .login-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #3D2B29; /* Dark brown */
-    margin-bottom: 20px;
-  }
-  
-  /* Input field styles */
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: #3D2B29; /* Dark brown */
-    font-family: 'Poppins', sans-serif; /* Added Poppins font */
-    max-width: 400px; /* Increase the length of input fields */
-  }
-  
-  /* reCAPTCHA container styling */
-  .recaptcha-container {
-    width: 100%;
-    margin: 10px 0;
-  }
-  
-  /* Button styling */
-  .login-button {
-    background-color: #FFB5B5; /* Light pink */
-    color: #3D2B29; /* Dark brown */
-    padding: 12px 0;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background-color: #ff9a9a; /* Slightly darker pink on hover */
-  }
-  
-  /* Skip button styling */
-  .skip-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 12px;
-    padding: 5px 10px;
-    background-color: #ddd;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .skip-button:hover {
-    background-color: #ccc;
-  }
-  
-  /* Error message styling */
-  .error-message {
-    color: #e74c3c;
-    font-size: 14px;
-    margin-top: 10px;
-  }
+/* General Styles */
+.login-page {
+  display: flex;
+  height: 100vh;
+}
 
-  /* Skip button styling (same as login button) */
-.skip-button {
-    background-color: F47A7DLight pink */
-    color: #3D2B29; /* Dark brown */
-    padding: 12px 0;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px; /* Space between login and skip buttons */
-    transition: background-color 0.3s ease;
-  }
-  
-  .skip-button:hover {
-    background-color: #ff9a9a; /* Slightly darker pink on hover */
-  }
+.login-container {
+  width: 50%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px; /* Increased border radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box-shadow for better aesthetics */
+}
 
-  
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px; /* Increased border radius */
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Increased border radius */
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  color: #3D2B29; /* Dark brown color for text inside input fields */
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #F47A7D;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.login-button:hover {
+  background-color: #F47A7D;
+}
+
+.error-message {
+  color: #3D2B29; /* Dark brown color for error messages */
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Home Page Section */
+.home-section {
+  width: 50%;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px; /* Increased border radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+}
+
+.home-content {
+  width: 80%;
+}
+
+.logo-image {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.home-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3D2B29; /* Dark brown color for title */
+  margin-bottom: 10px;
+}
+
+.home-description {
+  font-size: 16px;
+  color: #3D2B29; /* Dark brown color for description text */
+}

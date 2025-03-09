@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha"; // Import reCAPTCHA
 import "./Login.css"; // Import the CSS file for external styles
+import myImage from "/src/assets/main logo.svg"; // Path to your logo
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -49,50 +50,59 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-card">
-        <h2 className="login-title">Login</h2>
-        <form onSubmit={handleLogin}>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            className="input-field"
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="input-field"
-          />
-          <br />
-
-           {/* Add reCAPTCHA */}
-           <div className="recaptcha-container">
-            <ReCAPTCHA
-              sitekey="6Lcr_u4qAAAAAH8SC6Xx7m2XCXnEKPW9dCeZHGPZ" // Replace with your actual site key
-              onChange={(token) => setRecaptchaToken(token)}
+    <div className="login-page">
+      <div className="login-container">
+        <div className="login-form">
+          <h2 className="login-title">Login</h2>
+          <form onSubmit={handleLogin}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              className="input-field"
             />
-          </div>
-          <br />
+            <br />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="input-field"
+            />
+            <br />
 
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          <button onClick={handleSkipLogin} className="login-button">
-          Skip Login
-          </button>
+            {/* Add reCAPTCHA */}
+            <div className="recaptcha-container">
+              <ReCAPTCHA
+                sitekey="6Lcr_u4qAAAAAH8SC6Xx7m2XCXnEKPW9dCeZHGPZ" // Replace with your actual site key
+                onChange={(token) => setRecaptchaToken(token)}
+              />
+            </div>
+            <br />
 
-        </form>
-        <p className="error-message">{message}</p>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            <button onClick={handleSkipLogin} className="login-button">
+              Skip Login
+            </button>
+          </form>
+          <p className="error-message">{message}</p>
+        </div>
+      </div>
 
-        {/* Skip Login Button */}
-       
+      {/* Home Page-like Section */}
+      <div className="home-section">
+        <div className="home-content">
+          <img src={myImage} alt="Logo" className="logo-image" />
+          <h2 className="home-title">Welcome to the AI-Driven Speech Therapy App</h2>
+          <p className="home-description">
+            This app helps users with speech therapy, tracking emotional changes and stress levels to provide personalized feedback and improve speech quality.
+          </p>
+        </div>
       </div>
     </div>
   );
