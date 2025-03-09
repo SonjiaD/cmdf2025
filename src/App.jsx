@@ -31,7 +31,14 @@ function Progress() {
 }
 
 function Settings() {
-  return <h1>Settings</h1>;
+  return <>
+    <h1>Settings</h1>
+    <p>This is the settings page</p>
+    <div class="settingsContainer">
+      <p>Name: </p>
+      <input></input>
+    </div>
+    </>;
 }
 
 function App() {

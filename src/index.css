@@ -63,3 +63,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.settingsContainer {
+  display: flex;
+  justify-items: center;
+}
