@@ -28,7 +28,8 @@ const BreathingExercise = () => {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>Guided Breathing Exercise</h2>
+    <h2 style={{ ...styles.title, marginBottom: "50px" }}>Guided Breathing Exercise</h2>
+      
       <motion.div
         animate={{
           scale: phase === "Hold" ? prevScale : phase === "Inhale" ? 1.5 : 0.8,
@@ -65,7 +66,7 @@ const styles = {
   circle: {
     width: "80px",
     height: "80px",
-    backgroundColor: "#007BFF",
+    backgroundColor: "#d2ded4",
     borderRadius: "50%",
     marginBottom: "20px",
   },

@@ -21,8 +21,8 @@ const Settings = () => {
     }, [username]);
 
     return (
-        <div className="settings-container">
-            <h2>Settings</h2>
+    <div className="settings-container" style={{ marginTop: "150px" }}>
+            <h1>Settings</h1>
             <h3>Login History</h3>
             {loginHistory.length > 0 ? (
                 <table>

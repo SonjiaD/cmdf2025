@@ -11,7 +11,8 @@ function Fluency() {
 
   return (
     <div>
-      <h1 className="title">Fluency practice</h1>
+    <h1 className="title" style={{ marginTop: "150px" }}>Fluency practice</h1>
+      
       <button className="button button1">Slow speech</button>
       <button className="button button2" onClick={goToBreathing}>Deep breathing</button>
       <button className="button button3">Pausing</button>

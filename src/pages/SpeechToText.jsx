@@ -75,7 +75,8 @@ const SpeechToText = () => {
 
   return (
     <div className="p-4 text-center">
-      <h2 className="text-2xl font-bold">🎙️ Speech-to-Text Practice</h2>
+\
+      <h2 className="text-2xl font-bold"style={{ marginTop: "200px" }}>🎙️ Speech-to-Text Practice</h2>
 
       <div className="progress-container">
         <div className="progress-filler" style={{ width: `${progress}%` }}></div>
