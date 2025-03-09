@@ -49,3 +49,55 @@
   margin-right: 10px; 
   vertical-align: middle;
 }
+
+.navbar {
+  display: flex;
+  position: fixed;  /* This keeps the navbar fixed at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 2px #6E605F;
+  z-index: 1000; /* Keeps the navbar on top of other content */
+  padding: 20px 50px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  color: #3D2B29; /* Dark brown */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+.navbar a:hover {
+  color: #5A4543; /* Slightly lighter brown for hover effect */
+}
+
+.navbar-Title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-right: 75px;
+  white-space: nowrap;
+  color: #3D2B29; /* Dark brown */
+}
+
+.navbar img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  vertical-align: middle;
+}

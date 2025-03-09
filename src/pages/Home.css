@@ -1,87 +1,401 @@
+/* General body styling */
 html, body {
   height: 100%;
   margin: 0;
-  color: #3D2B29; /* Dark brown font color for all text */
+  color: #3D2B29;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background: none;  /* Remove the background color */
+  font-family: 'Poppins', sans-serif; /* Fun font */
 }
 
-body {
+/* Title container styles */
+.title-container {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.title-container .title {
+  font-size: 56px;
+  font-weight: bold;
+  color: #4A3B31;
+  animation: fadeIn 1s ease-out; /* Fun fade-in effect */
+}
+
+.title-container .title-subtitle {
+  font-size: 28px;
+  font-weight: normal;
+  color: #7A5C4E;
+  max-width: 650px;
+  animation: fadeIn 1.5s ease-out; /* Slight delay for subtitle */
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Fun, interactive buttons */
+button {
+  background-color: #FFB5B5;
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1); /* Button grows on hover for a fun effect */
+}
+
+/* Solution Box styling */
+.solution-Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  margin-top: 40px;
+  flex-grow: 1;
+  background-color: #FFE9D9; /* Soft peach background */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: bounceIn 1s ease-out; /* Bounce effect for the box */
+}
+
+@keyframes bounceIn {
+  0% { transform: translateY(-30px); opacity: 0; }
+  50% { transform: translateY(15px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+
+/* Title inside the solution box */
+.list-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #3D2B29;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add progress indicators or other fun elements */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #D3C1B4;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.progress-bar-fill {
+  width: 75%; /* Example progress */
+  height: 100%;
+  background-color: #FFB5B5;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.solution-item {
+  padding: 20px;
+  background-color: #F8D3C3;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: #FFF;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
+.solution-item:hover {
+  transform: translateY(-10px); /* Hover effect to lift the card */
+}
+
+.solution-item-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3D2B29;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Cute animations for header sections */
+.solution-header {
+  font-size: 30px;
+  font-weight: bold;
+  color: #3D2B29;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive cards for solution items */
+@media (max-width: 768px) {
+  .solution-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Solution Section Styles */
+.solution-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;  /* Adds spacing between the items */
+  justify-content: center;  /* Centers the items horizontally */
+}
+
+.solution-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.solution-item {
+  width: 48%;  /* Each item will take 48% of the row width, allowing 2 items per row */
+  margin-bottom: 20px;  /* Adds some space at the bottom of each solution item */
+  padding: 20px;
+  background-color: #F8D3C3;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.solution-item:hover {
+  transform: translateY(-10px); /* Hover effect to lift the card */
+}
+
+/* Title Section */
 .title-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  justify-content: space-between; /* Distribute space between the text and image */
+  align-items: center; /* Center the items vertically */
+  width: 100%;
+  padding: 20px; /* Optional: Add padding for spacing */
 }
 
 .text-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
+  flex-direction: column; /* Stack the text vertically */
+  flex: 1; /* Allow text to take up available space */
 }
 
-.text-container .title {
-  font-size: 48px;
-  font-weight: bold;
-  color: #3D2B29; /* Dark brown */
+.title {
+  font-size: 36px; /* Adjust font size for the title */
+  margin-bottom: 10px; /* Add space between the title and subtitle */
 }
 
-.text-container .title-subtitle {
-  font-size: 24px;
-  font-weight: normal;
-  color: #5A4543; /* Slightly lighter brown */
+.title-subtitle {
+  font-size: 24px; /* Adjust font size for the subtitle */
+  color: #3D2B29; /* Optional: Add color to the subtitle */
 }
 
-.mt-10 {
-  margin-top: 10px;
-}
-
-.max-w-3xl {
-  max-width: 800px;
-  width: 100%;
-}
-
-.logoImage {
-  width: 700px;
-  height: auto;
-  max-width: 100%;
-}
-
-/* Solution Box */
-.solution-Box {
+/* Main container to split into two halves */
+.container {
   display: flex;
-  width: 714px;
+  width: 100%; /* Ensure it takes up the full width of the page */
+  height: 100vh; /* Make it take up the full height of the viewport */
+}
+
+/* Left half for the text */
+.text-container {
+  flex: 1; /* Take up half the screen */
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-  padding: 64px;
+  justify-content: center; /* Vertically center the content */
+  padding: 20px; /* Add padding to the text container */
 }
 
-/* Title */
-.list-title {
-  font-size: 32px;
+/* Right half for the image */
+.icon-container {
+  flex: 1; /* Take up half the screen */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  /* padding: px; */
+}
+
+/* Styling for the title text */
+.title-subtitle {
+  font-size: 36px; /* Adjust the title size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Styling for the introductory paragraph */
+.intro-text {
+  font-size: 18px;
+  color: #3D2B29; /* Gray color for the text */
+  line-height: 1.5;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+/* Styling for the logo image */
+.logo-image {
+  max-width: 40%; /* Limit image size */
+  height: auto;
+  margin-right: 20px; /* Space between image and text */
+}
+
+.middle-banner {
+  background-color: #ff9900; /* Soft orange to match your theme */
+  text-align: center;
+  padding: 12px 0;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #3D2B29; /* Dark brown */
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-/* List */
-.list-desc {
-  font-size: 20px;
-  text-align: left;
-  list-style-position: inside;
-  color: #3D2B29; /* Dark brown */
+.marquee {
+  display: flex;
+  gap: 30px;
+  animation: scrollText 60s linear infinite; /* Slower movement */
 }
 
-ul {
-  padding-left: 0;
-  margin-left: 0;
-  color: #3D2B29; /* Dark brown */
+/* Slow rotation for icons */
+.spin {
+  display: inline-block;
+  animation: spin 15s linear infinite; /* Even slower spin */
+}
+
+/* Text styling */
+.banner-text {
+  font-size: 1.4rem;
+  color: white; /* White text for contrast */
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner-text:hover {
+  transform: scale(1.1);
+  color: #ffd700; /* Gold highlight on hover */
+}
+
+/* Keyframes for slow spinning icons */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Slow, smooth text scrolling */
+@keyframes scrollText {
+  from { transform: translateX(50%); }
+  to { transform: translateX(-50%); }
+}
+
+.middle-banner {
+  background-color: #f4f4f4; /* Light gray for a modern, soft look */
+  color: #333; /* Dark gray for readability */
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 0; /* Extends edge-to-edge */
+  width: 100%; /* Full width */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Moving text inside the fixed full-width banner */
+.marquee {
+  display: flex;
+  gap: 40px;
+  animation: scrollText 100s linear infinite; /* Slow, smooth scrolling */
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Slow rotation for icons */
+.spin {
+  display: inline-block;
+  animation: spin 12s linear infinite; /* Smooth spinning */
+}
+
+/* Text Styling */
+.banner-text {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+/* Keyframes for slow spinning icons */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Smooth, slow scrolling text */
+@keyframes scrollText {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.marquee {
+  display: flex;
+  gap: 40px;
+  animation: scrollText 100s linear infinite;
+  white-space: nowrap;
+  width: max-content; /* Ensures smooth scrolling without shifting */
+  position: absolute; /* Prevents affecting the parent div */
+}
+
+.solutions-container,
+.container {
+  margin-top: 20px; /* Reset spacing after the banner */
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+.middle-banner {
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100vw; /* Full width without affecting layout */
+  overflow: hidden;
+  position: relative;
+  height: 50px; /* Fixed height so it doesn’t affect content below */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0; /* Keeps spacing consistent */
+  z-index: 10; /* Keeps it above other elements */
+  margin-bottom: 100px;
 }
