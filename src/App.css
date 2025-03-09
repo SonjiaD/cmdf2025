@@ -47,3 +47,26 @@
 .read-the-docs {
   color: #888;
 }
+
+/* additional stuff sonja added for the settings page */
+.settings-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
