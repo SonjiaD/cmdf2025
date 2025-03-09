@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import useProgressStore from "../useProgressStore";
 
 function Progress() {
-  const points = useProgressStore((state) => state.points);
+  //const points = useProgressStore((state) => state.points);
+  const { points, totalAccuracy, attempts } = useProgressStore();
 
-  // needs to use saved weekly data
-  const [dailyAccuracy, setDailyAccuracy] = useState(0);
-  const [weeklyAccuracy, setWeeklyAccuracy] = useState(0);
+  // calculate average accuracy for the day
+  const averageAccuracy = attempts > 0 ? (totalAccuracy / attempts).toFixed(0) : 0;
 
-  const increaseAccuracy = () => {
-    setDailyAccuracy((prev) => (prev >= 100 ? 100 : prev + 5));
-    setWeeklyAccuracy((prev) => (prev >= 100 ? 100 : prev + 3));
-  };
-  
-  
+  // calculate average accuracy for the day
+  const averageWeeklyAccuracy = attempts > 0 ? ((totalAccuracy / attempts)/7).toFixed(0) : 0;
 
   // buttons are temporary until exercises are implemented
   return (
@@ -26,22 +22,16 @@ function Progress() {
       </div>
       <h1>Daily Accuracy</h1>
       <div style={styles.container}>
-        <div style={{ ...styles.filler, width: `${dailyAccuracy}%` }}>
-          <span style={styles.label}>{dailyAccuracy}%</span>
+        <div style={{ ...styles.filler, width: `${averageAccuracy}%` }}>
+          <span style={styles.label}>{averageAccuracy}%</span>
         </div>
       </div>
-      <button onClick={increaseAccuracy} style={styles.button}>
-        Increase Accuracy
-      </button>
       <h1>Weekly Accuracy</h1>
       <div style={styles.container}>
-        <div style={{ ...styles.filler, width: `${weeklyAccuracy}%` }}>
-          <span style={styles.label}>{weeklyAccuracy}%</span>
+        <div style={{ ...styles.filler, width: `${averageWeeklyAccuracy}%` }}>
+          <span style={styles.label}>{averageWeeklyAccuracy}%</span>
         </div>
       </div>
-      <button onClick={increaseAccuracy} style={styles.button}>
-        Increase Accuracy
-      </button>
     </div>
   );
 }
