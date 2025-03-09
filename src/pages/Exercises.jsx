@@ -11,7 +11,7 @@ function Exercises() {
         <button onClick={() => navigate("/fluency")}>Fluency</button>
       </div>
       <div className="board-row">
-        <button onClick={() => navigate("/speaking")}>Speaking</button>
+        <button onClick={() => navigate("/language")}>Language</button>
         <button onClick={() => navigate("/understanding")}>Understanding</button>
       </div>
     </>;
