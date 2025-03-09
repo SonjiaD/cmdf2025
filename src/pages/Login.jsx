@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha"; // Import reCAPTCHA
+import "./Login.css"; // Import the CSS file for external styles
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -48,54 +49,49 @@ const Login = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px", position: "relative" }}>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <br />
+    <div className="login-container">
+      <div className="login-card">
+        <h2 className="login-title">Login</h2>
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            className="input-field"
+          />
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="input-field"
+          />
+          <br />
 
-        {/* Add reCAPTCHA */}
-        <ReCAPTCHA
-          sitekey="6Lcr_u4qAAAAAH8SC6Xx7m2XCXnEKPW9dCeZHGPZ" // Replace with your actual site key
-          onChange={(token) => setRecaptchaToken(token)}
-        />
-        <br />
+           {/* Add reCAPTCHA */}
+           <div className="recaptcha-container">
+            <ReCAPTCHA
+              sitekey="6Lcr_u4qAAAAAH8SC6Xx7m2XCXnEKPW9dCeZHGPZ" // Replace with your actual site key
+              onChange={(token) => setRecaptchaToken(token)}
+            />
+          </div>
+          <br />
 
-        <button type="submit">Login</button>
-      </form>
-      <p>{message}</p>
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+        <p className="error-message">{message}</p>
 
-      {/* Skip Login Button */}
-      <button
-        onClick={handleSkipLogin}
-        style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          fontSize: "12px",
-          padding: "5px 10px",
-          border: "none",
-          backgroundColor: "#ddd",
-          cursor: "pointer",
-          borderRadius: "5px",
-        }}
-      >
-        Skip Login
-      </button>
+        {/* Skip Login Button */}
+        <button onClick={handleSkipLogin} className="skip-button">
+          Skip Login
+        </button>
+      </div>
     </div>
   );
 };
