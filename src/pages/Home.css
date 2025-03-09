@@ -1,6 +1,93 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #FFF;
+  }
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;  /* Align text to the left inside the container */
+  }
+  
+  .text-container .title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .text-container .title-subtitle {
+    font-size: 24px;
+    font-weight: normal;
+    color: #777;
+  }
+  
+  .mt-10 {
+    margin-top: 10px;
+  }
+  
+  .max-w-3xl {
+    max-width: 800px;
+    width: 100%;
+  }
 
 
-.home-container{
-    background: rgb(251,239,227);
-background: linear-gradient(174deg, rgba(251,239,227,1) 0%, rgba(255,219,176,1) 22%, rgba(246,210,196,1) 57%, rgba(225,226,201,1) 78%, rgba(208,221,210,1) 95%);
-}
+
+  .logoImage {
+    width: 700px;  /* Adjust this to make the image bigger */
+    height: auto;   /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it still scales responsively */
+  }
+  
+  
+
+  /*lists*/
+/* Solution Box */
+.solution-Box {
+    display: flex;
+    width: 714px;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 15px;
+    padding: 64px;
+  }
+  
+  /* Title */
+  .list-title {
+    font-size: 32px;
+    font-weight: bold; 
+    padding-left: 0;
+    margin-left: 0;  
+
+  }
+  
+  /* List */
+  .list-desc {
+    font-size: 20px;
+    text-align: left; 
+    list-style-position: inside; 
+  }
+  
+
+  ul {
+    padding-left: 0; 
+    margin-left: 0;  
+  }
+  

@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function AnimatedHeading({ text }) {
+function AnimatedHeading({ text, className }) {
   return (
     <motion.h1
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="text-4xl font-bold text-center text-orange-600 mb-6"
+      className={className}  // This ensures the className is applied correctly
     >
       {text}
     </motion.h1>
