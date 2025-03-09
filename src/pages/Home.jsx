@@ -1,7 +1,12 @@
 import React from "react";
+import CloudFlare from "../components/CloudFlare";
 
 function Home() {
-  return <h1>Home Page</h1>;
+  return (
+    <div>
+      <CloudFlare />
+    </div>
+  );
 }
 
 export default Home;

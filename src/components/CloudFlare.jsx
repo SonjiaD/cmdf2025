@@ -1,4 +1,4 @@
-import { run } from "./index.js";
+import { run } from "../index.js";
 import { useEffect, useState } from "react";
 import { FormControl, TextField } from "@mui/material";
 
