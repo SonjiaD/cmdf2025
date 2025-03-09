@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import AnimatedHeading from "../components/AnimatedHeading";
 import ContentBox from "../components/ContentBox";
 import CloudFlare from "../components/CloudFlare";
+import SpeechToTextAndCloudFlare from "./SpeechToTextAndCloudFlare";
 
 function Home() {
   return (
@@ -26,7 +27,8 @@ function Home() {
         <h2 className="text-2xl font-semibold text-orange-500 mb-4 text-center">
           Chat with Our AI Speech Therapy Assistant
         </h2>
-        <CloudFlare />
+        {/* <CloudFlare /> */}
+        <SpeechToTextAndCloudFlare />
       </div>
     </Layout>
   );
