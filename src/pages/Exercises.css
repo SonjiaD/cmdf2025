@@ -1,34 +1,50 @@
-
-/*styling for boxes*/
-.board-row-01 {
+/* Styling for board rows */
+.board-row {
     display: flex;
-    width: 513px;
-    height: 310px;
-    padding: 16px 27px;
-    align-items: flex-end;
-    gap: 10px;
-    flex-shrink: 0;
-  
-    border-radius: 30px;
-    background-color: #F8D3C3;
-  
-    /* Ensure the button takes up the full size of its container */
-    width: 100%;
-    height: 100%;
-    border: none; /* Optional: remove default border */
-    background-color: transparent; /* Optional: remove default background */
+    justify-content: space-around; 
+    gap: 20px;
+    margin-bottom: 20px; 
   }
   
+  /* Styling for each button */
+  .board-box {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-end; 
+    width: 513px;
+    height: 310px;
+    background-color: #F8D3C3; 
+    border-radius: 30px;
+    padding: 16px 27px;
+    position: relative; 
+    border: none; 
+  }
+  
+  .board-box span {
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 10px; 
+    left: 10px;
+    font-size: 36px;
+    font-weight: 400;
+    padding:30px;
 
-.board-row-02{
-    
-}
+  }
+  
+  /*indivdual styling*/
+  .board-box-articulation{
+    background-color: #F8D3C3;
+  }
+
+  .board-box-fluency{
+    background-color: #D2DED4;
+  }
+
+  .board-box-language{
+    background-color: #E0E2CC;
+  }
 
 
-.board-row-03{
-    
-}
-
-.board-row-04{
-    
-}
+  .board-box-understanding{
+    background-color: #FEDBB1;
+  }
