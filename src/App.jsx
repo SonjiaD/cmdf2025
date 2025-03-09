@@ -32,6 +32,8 @@ function App() {
         <Route path="/understanding" element={<Understanding />} />
         <Route path="/speech-to-text" element={<SpeechToText />} />
         <Route path="/breathe" element={<Breathe />} />
+        
+        <Route path="/login" element={<Login />} />
 
       </Routes>
     </BrowserRouter>
