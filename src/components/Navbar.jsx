@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './Navbar.css'
 
 /*importing icons*/
-import homeIcon from "/src/assets/home.svg"; // Correct path to your SVG file
+import homeIcon from "/src/assets/home.svg"; 
 import exercisesIcon from "/src/assets/exercise.svg";
 import progressIcon from "/src/assets/progress.svg";
 import settingsIcon from "/src/assets/settings.svg"; 

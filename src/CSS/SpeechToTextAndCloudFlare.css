@@ -150,3 +150,40 @@ div > .loading {
 .h-80::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
+
+/* Wrapper to hold both the mascot and speech bubble */
+.target-phrase-wrapper {
+  display: flex; 
+  align-items: center; 
+  margin-top: 20px;
+}
+
+/* Speech bubble container */
+.target-phrase-container {
+  padding: 10px 20px; 
+  background-color: #FBF1E5; 
+  position: relative;
+  border-radius: 10px;
+  color: black; 
+  max-width: fit-content; 
+  word-wrap: break-word; 
+}
+
+/* The triangle on the left side of the speech bubble */
+.target-phrase-container::before {
+  content: "";
+  position: absolute;
+  left: -20px; 
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #FBF1E5; 
+}
+
+/* Mascot image */
+.mascot-image {
+  width: 100px; 
+  height: 100px; 
+  margin-right: 86px; 
+}
