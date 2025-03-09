@@ -1,17 +1,20 @@
 .navbar {
-    position: sticky;
+    display: flex;
     top: 0;
     width: 100%;
     background: #333;
     color: white;
-    padding: 15px 20px;
+    padding: 15px;
     z-index: 1000;
+    align-items: center;
+    justify-content: center;
   }
   
   .navbar ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    align-items: center;
   }
   
   .navbar a {

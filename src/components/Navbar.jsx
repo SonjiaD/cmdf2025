@@ -5,7 +5,6 @@ import './Navbar.css'
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2>Website</h2>
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/exercises">Exercises</Link></li>

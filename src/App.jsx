@@ -35,7 +35,7 @@ function Settings() {
 }
 
 function App() {
-  const [text, setText] = useState('');
+  /*const [text, setText] = useState('');
   const [isListening, setIsListening] = useState(false);
   let recognition;
 
@@ -64,9 +64,9 @@ function App() {
     if (recognition) recognition.stop();
     setIsListening(false);
   };
-
+*/
   return (
-    <><BrowserRouter>
+    <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -75,7 +75,11 @@ function App() {
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
+  );
+}
+
+/*
+<div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
         <h1 className="text-3xl font-bold mb-4">Speech to Text</h1>
         <textarea
           className="w-full max-w-2xl h-80 p-4 border border-gray-300 rounded-md mb-4"
@@ -91,8 +95,7 @@ function App() {
           </button>
         </div>
       </div></>
-  );
-}
+*/
 
 const styles = {
   button: {
