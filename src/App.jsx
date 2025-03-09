@@ -1,4 +1,19 @@
 import { useState } from 'react';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
+function Home() {
+  return <h1>Home Page</h1>;
+}
+
+function About() {
+  return <h1>About Us</h1>;
+}
+
+function Contact() {
+  return <h1>Contact Us</h1>;
+}
 
 function App() {
   const [text, setText] = useState('');
@@ -32,23 +47,29 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold mb-4">Speech to Text</h1>
-      <textarea
-        className="w-full max-w-2xl h-80 p-4 border border-gray-300 rounded-md mb-4"
-        value={text}
-        placeholder="Your speech will appear here..."
-        readOnly
-      />
-      <div className="flex gap-4">
-        <button
-          className={`px-6 py-2 rounded-md text-white ${isListening ? 'bg-red-500' : 'bg-blue-500'}`}
-          onClick={isListening ? stopListening : startListening}
-        >
-          {isListening ? 'Stop Listening' : 'Start Listening'}
-        </button>
-      </div>
-    </div>
+    <><BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter><div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
+        <h1 className="text-3xl font-bold mb-4">Speech to Text</h1>
+        <textarea
+          className="w-full max-w-2xl h-80 p-4 border border-gray-300 rounded-md mb-4"
+          value={text}
+          placeholder="Your speech will appear here..."
+          readOnly />
+        <div className="flex gap-4">
+          <button
+            className={`px-6 py-2 rounded-md text-white ${isListening ? 'bg-red-500' : 'bg-blue-500'}`}
+            onClick={isListening ? stopListening : startListening}
+          >
+            {isListening ? 'Stop Listening' : 'Start Listening'}
+          </button>
+        </div>
+      </div></>
   );
 }
 
