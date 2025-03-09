@@ -1,7 +1,7 @@
 import React from "react";
 import useProgressStore from "../useProgressStore";
 import './ProgressBar.css';
-import progressIcon from "/src/assets/banner.svg";
+import progressIcon from "/src/assets/learn.jpg";
 
 function Progress() {
   const { points, totalAccuracy, attempts } = useProgressStore();
@@ -38,8 +38,7 @@ function Progress() {
 }
 
 const styles = {
-  
-  wrapper: {
+    wrapper: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
