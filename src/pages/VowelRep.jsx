@@ -10,6 +10,7 @@ const getLevenshteinDistance = (a, b) => {
   }
   for (let j = 0; j <= b.length; j++) {
     tmp[0][j] = j;
+    
   }
   for (let i = 1; i <= a.length; i++) {
     for (let j = 1; j <= b.length; j++) {
