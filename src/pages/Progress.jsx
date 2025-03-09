@@ -38,6 +38,7 @@ function Progress() {
 }
 
 const styles = {
+  
   wrapper: {
     display: "flex",
     flexDirection: "column",
@@ -57,7 +58,7 @@ const styles = {
     alignItems: "flex-start",
     width: "70%",
     maxWidth: "1400px",
-    padding: "20px 0",
+    // padding: "20px 0",
   },
   container: {
     backgroundColor: "#e0e0df",
@@ -78,7 +79,7 @@ const styles = {
     textAlign: "left",
     fontSize: "16px",
     color: "#3D2B29",
-    marginBottom: "5px"
+    // marginBottom: "0px"
   }
 };
 

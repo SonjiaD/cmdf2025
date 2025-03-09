@@ -1,8 +1,8 @@
 /* chat container */
 .max-w-md {
   max-width: 480px;
-  max-height: 500px;
-  min-height: 500px;
+  max-height: 550px;
+  min-height: 550px;
   width: 100%;
   background-color: var(--white);
   overflow-y: auto;
@@ -20,7 +20,7 @@
 
   opacity: 1;
   transform: scale(1) translateY(0);
-  transition: opacity 0.5s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.2s ease;
 
   cursor: grab;
 }
@@ -31,7 +31,7 @@
 
 .max-w-md.visible {
   opacity: 1;
-  transform: scale(1) translateY(0); /* Gradual expansion */
+  transform: scale(1) translateY(0);
 }
 
 /* Adjust the toggle button */
@@ -102,7 +102,7 @@ button {
   cursor: pointer;
   width: 100%;
   margin-top: 10px;
-  outline: none; /* Remove default focus outline */
+  outline: none;
 }
 
 .record:hover {
@@ -110,7 +110,7 @@ button {
 }
 
 button:focus {
-  outline: none; /* Remove focus outline */
+  outline: none;
 }
 
 button:hover {
@@ -177,4 +177,11 @@ div > .load {
   100% {
     opacity: 1;
   }
+}
+
+.speaker-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  vertical-align: middle;
 }
