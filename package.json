@@ -26,6 +26,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "fontawesome": "^5.6.3",
     "framer-motion": "^12.4.10",
     "jsonwebtoken": "^9.0.2",
     "motion": "^12.4.10",

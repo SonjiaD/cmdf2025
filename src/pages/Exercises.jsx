@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Exercises.css";
 import AnimatedHeading from "../components/AnimatedHeading";
-import exerciseBanner from "/src/assets/banner.svg";
+import exerciseBanner from "/src/assets/exerciseBanner.jpg";
 
 
 function Exercises() {

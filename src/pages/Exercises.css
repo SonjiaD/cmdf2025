@@ -1,11 +1,19 @@
+/* Banner styling */
+.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 /* Title container styles */
 .title-container {
-  padding-top: 250px;  /* Adds padding to the top to position title correctly */
+  padding-top: 150px;  /* Reduced padding for better alignment */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;         /* Ensures container takes full width */
+  width: 100%;
 }
 
 .text-container {
@@ -13,46 +21,49 @@
 }
 
 .title {
-  font-size: 1.5rem;  /* Increased font size for better visibility */
-  color: #3D2B29;     /* Dark brown color */
-  margin: 0;          /* Removes default margin */
+  font-size: 1.8rem;  /* Slightly increased font size */
+  color: #3D2B29;
+  margin: 0;
+}
+
+/* Board layout */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 /* Styling for board rows */
 .board-row {
   display: flex;
-  justify-content: center;  /* Centers the buttons horizontally */
-  gap: 64px;               /* Adds space between buttons */
-  margin-bottom: 20px;      /* Adds space below each row */
-  width: 100%;              /* Ensures the row spans full width */
+  justify-content: center;
+  gap: 50px;  /* Adjusted spacing for better layout */
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 /* Styling for individual board buttons (boxes) */
 .board-box {
   display: flex;
-  justify-content: center;  /* Centers the text horizontally */
-  align-items: center;      /* Centers the text vertically */
-  width: 400px;
-  height: 100px;            /* Set height for the button */
-  background-color: #F8D3C3; 
-  border-radius: 30px;
-  padding: 16px 27px;       /* Padding inside the box */
-  position: relative; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;  /* Adjusted width */
+  height: 100px;
+  border-radius: 15px; /* Less rounded corners */
+  padding: 16px;
+  position: relative;
   border: none;
-  font-size: 24px;          /* Adjusted font size for clarity */
-  cursor: pointer;         /* Changes cursor to pointer on hover */
-  transition: background-color 0.3s;  /* Smooth background transition */
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .board-box:hover {
-  background-color: #E0A8A0; /* Darker color when hovering over the button */
-}
-
-/* Styling for the text inside the buttons */
-.board-box span {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
 }
 
 /* Individual box colors */
@@ -72,3 +83,16 @@
   background-color: #FEDBB1;
 }
 
+/* Description text below buttons */
+.exercise-option {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.exercise-description {
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  text-align: center;
+  max-width: 300px;
+}
