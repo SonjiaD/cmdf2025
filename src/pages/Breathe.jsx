@@ -13,7 +13,7 @@ const BreathingExercise = () => {
       setTimeout(() => setPhase("Hold"), 11000); // Transition to Hold after Exhale
     };
     cycleBreathing();
-    const interval = setInterval(cycleBreathing, 15000);
+    const interval = setInterval(cycleBreathing, 1);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,8 +28,10 @@ const BreathingExercise = () => {
 
   return (
     <div style={styles.container}>
-    <h2 style={{ ...styles.title, marginBottom: "50px" }}>Guided Breathing Exercise</h2>
-      
+      <h2 style={{ ...styles.title, marginBottom: "50px" }}>
+        Guided Breathing Exercise
+      </h2>
+
       <motion.div
         animate={{
           scale: phase === "Hold" ? prevScale : phase === "Inhale" ? 1.5 : 0.8,
@@ -43,7 +45,8 @@ const BreathingExercise = () => {
       />
       <p style={styles.phaseText}>{phase}</p>
       <p style={styles.instructions}>
-        Breathe in as the circle expands. Hold when it stops. Exhale as it shrinks.
+        Breathe in as the circle expands. Hold when it stops. Exhale as it
+        shrinks.
       </p>
     </div>
   );

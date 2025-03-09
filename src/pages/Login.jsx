@@ -20,11 +20,14 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login", {
-        username,
-        password,
-        recaptchaToken,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/api/auth/login",
+        {
+          username,
+          password,
+          recaptchaToken,
+        }
+      );
 
       // Store JWT token and user session
       localStorage.setItem("token", response.data.token);
@@ -98,9 +101,13 @@ const Login = () => {
       <div className="home-section">
         <div className="home-content">
           <img src={myImage} alt="Logo" className="logo-image" />
-          <h2 className="home-title">Welcome to the AI-Driven Speech Therapy App</h2>
+          <h2 className="home-title">
+            Welcome to the AI-Driven Speech Therapy App
+          </h2>
           <p className="home-description">
-            This app helps users with speech therapy, tracking emotional changes and stress levels to provide personalized feedback and improve speech quality.
+            This app helps users with speech therapy, tracking emotional changes
+            and stress levels to provide personalized feedback and improve
+            speech quality.
           </p>
         </div>
       </div>

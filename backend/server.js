@@ -58,6 +58,9 @@ app.post('/api/auth/login', async (req, res) => {
             }
         );
 
+
+        console.log("res", recaptchaResponse.data);
+
         if (!recaptchaResponse.data.success) {
             return res.status(400).json({ message: "reCAPTCHA verification failed!" });
         }
