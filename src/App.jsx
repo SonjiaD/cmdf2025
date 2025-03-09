@@ -2,6 +2,7 @@ import { useState } from 'react';
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import ProgressBar from "./components/Progressbar";
 
 function Home() {
   return <h1>Home Page</h1>;
@@ -12,7 +13,21 @@ function Exercises() {
 }
 
 function Progress() {
-  return <h1>Progress</h1>;
+  const [progress, setProgress] = useState(0);
+
+  const increaseProgress = () => {
+    setProgress((prev) => (prev >= 100 ? 100 : prev + 10));
+  };
+
+  return (
+    <div style={{ textAlign: "center", padding: "20px" }}>
+      <h1>Progress Bar Example</h1>
+      <ProgressBar progress={progress} />
+      <button onClick={increaseProgress} style={styles.button}>
+        Increase Progress
+      </button>
+    </div>
+  );
 }
 
 function Settings() {
@@ -59,7 +74,8 @@ function App() {
         <Route path="/progress" element={<Progress />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
-    </BrowserRouter><div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
+    </BrowserRouter>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-8">
         <h1 className="text-3xl font-bold mb-4">Speech to Text</h1>
         <textarea
           className="w-full max-w-2xl h-80 p-4 border border-gray-300 rounded-md mb-4"
@@ -77,5 +93,17 @@ function App() {
       </div></>
   );
 }
+
+const styles = {
+  button: {
+    padding: "10px 20px",
+    marginTop: "10px",
+    background: "#4caf50",
+    color: "white",
+    border: "none",
+    cursor: "pointer",
+    borderRadius: "5px"
+  }
+};
 
 export default App;
