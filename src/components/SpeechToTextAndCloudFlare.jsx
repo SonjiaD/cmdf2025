@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import CloudFlare from "./CloudFlare";
 import GetText from "./GetText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 const SpeechToTextAndCloudFlare = () => {
   const [transcript, setTranscript] = useState("");
@@ -13,6 +13,7 @@ const SpeechToTextAndCloudFlare = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isChatVisible, setIsChatVisible] = useState(false);
   const [voices, setVoices] = useState([]);
+  const [speakingIndex, setSpeakingIndex] = useState(null);
 
   useEffect(() => {
     const synth = window.speechSynthesis;
@@ -49,13 +50,20 @@ const SpeechToTextAndCloudFlare = () => {
     ]);
   };
 
-  const handleSpeakMessage = (message) => {
-    const utterance = new SpeechSynthesisUtterance(message);
-    const selectedVoice =
-      voices.find((voice) => voice.name.includes("Google US English")) ||
-      voices[0];
-    utterance.voice = selectedVoice;
-    window.speechSynthesis.speak(utterance);
+  const handleSpeakMessage = (message, index) => {
+    if (speakingIndex === index) {
+      window.speechSynthesis.cancel();
+      setSpeakingIndex(null);
+    } else {
+      const utterance = new SpeechSynthesisUtterance(message);
+      const selectedVoice =
+        voices.find((voice) => voice.name.includes("Google US English")) ||
+        voices[0];
+      utterance.voice = selectedVoice;
+      utterance.onend = () => setSpeakingIndex(null);
+      window.speechSynthesis.speak(utterance);
+      setSpeakingIndex(index);
+    }
   };
 
   useEffect(() => {
@@ -97,17 +105,16 @@ const SpeechToTextAndCloudFlare = () => {
                 className={`my-2 p-2 rounded ${
                   msg.type === "user" ? "bg-blue-200" : "bg-gray-200"
                 }`}
-                onClick={() =>
-                  msg.type === "bot" && handleSpeakMessage(msg.text)
-                }
               >
                 {msg.text}
                 {msg.type === "bot" && (
                   <span
                     className="speaker-icon"
-                    onClick={() => handleSpeakMessage(msg.text)}
+                    onClick={() => handleSpeakMessage(msg.text, index)}
                   >
-                    <FontAwesomeIcon icon={faPlay} />
+                    <FontAwesomeIcon
+                      icon={speakingIndex === index ? faPause : faPlay}
+                    />
                   </span>
                 )}
               </div>

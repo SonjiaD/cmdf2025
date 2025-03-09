@@ -8,52 +8,97 @@
 
 /* Title container styles */
 .title-container {
-  padding-top: 150px;  /* Reduced padding for better alignment */
+  padding-top: 120px;  /* Adjusted padding for better layout */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-
-.text-container {
-  text-align: center;
 }
 
 .title {
-  font-size: 1.8rem;  /* Slightly increased font size */
+  font-size: 1.8rem;
   color: #3D2B29;
   margin: 0;
+  text-align: center;
 }
 
-/* Board layout */
+/* Centered board layout - Two buttons per row */
 .board {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two per row */
   gap: 20px;
+  justify-content: center; /* Centers grid items */
+  align-items: center; /* Aligns items vertically */
+  margin-top: 30px;
+  width: fit-content; /* Adjust width to fit the content */
+  margin-left: auto; /* Centers the grid */
+  margin-right: auto; /* Centers the grid */
 }
 
-/* Styling for board rows */
-.board-row {
-  display: flex;
-  justify-content: center;
-  gap: 50px;  /* Adjusted spacing for better layout */
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-/* Styling for individual board buttons (boxes) */
+/* Styling for individual board buttons */
 .board-box {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack content inside */
   align-items: center;
   justify-content: center;
-  width: 350px;  /* Adjusted width */
-  height: 100px;
-  border-radius: 15px; /* Less rounded corners */
+  width: 350px;
+  height: 140px; /* Increased height to fit description */
+  border-radius: 15px;  /* Less rounded corners */
   padding: 16px;
-  position: relative;
+  border: none;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.board-box:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Individual box colors */
+.board-box-articulation { background-color: #F8D3C3; }
+.board-box-fluency { background-color: #D2DED4; }
+.board-box-language { background-color: #E0E2CC; }
+.board-box-understanding { background-color: #FEDBB1; }
+
+/* Exercise descriptions inside buttons */
+.exercise-option {
+  text-align: center;
+  max-width: 350px;
+}
+
+.exercise-description {
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Centered board layout - Two buttons per row */
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two per row */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Styling for individual board buttons */
+.board-box {
+  display: flex;
+  flex-direction: column; /* Stack title and description */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 350px;
+  height: 140px; /* Adjusted for description */
+  border-radius: 15px;
+  padding: 16px;
   border: none;
   font-size: 22px;
   font-weight: 500;
@@ -67,32 +112,23 @@
 }
 
 /* Individual box colors */
-.board-box-articulation {
-  background-color: #F8D3C3;
+.board-box-articulation { background-color: #F8D3C3; }
+.board-box-fluency { background-color: #D2DED4; }
+.board-box-language { background-color: #E0E2CC; }
+.board-box-understanding { background-color: #FEDBB1; }
+
+/* Title inside button */
+.exercise-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3D2B29;
+  margin-bottom: 6px;
 }
 
-.board-box-fluency {
-  background-color: #D2DED4;
-}
-
-.board-box-language {
-  background-color: #E0E2CC;
-}
-
-.board-box-understanding {
-  background-color: #FEDBB1;
-}
-
-/* Description text below buttons */
-.exercise-option {
-  text-align: center;
-  margin-top: 10px;
-}
-
+/* Description inside button */
 .exercise-description {
-  font-size: 16px;
+  font-size: 14px;
   color: #555;
   font-weight: 400;
-  text-align: center;
-  max-width: 300px;
+  margin: 0;
 }
