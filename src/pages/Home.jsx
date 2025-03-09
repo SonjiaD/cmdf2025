@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "../components/Layout";
 import AnimatedHeading from "../components/AnimatedHeading";
 import ContentBox from "../components/ContentBox";
-import CloudFlare from "../components/CloudFlare";
-import SpeechToTextAndCloudFlare from "./SpeechToTextAndCloudFlare";
+import "./Home.css";
+import SpeechToTextAndCloudFlare from "../components/SpeechToTextAndCloudFlare.jsx";
 
 function Home() {
   return (
