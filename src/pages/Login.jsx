@@ -27,7 +27,7 @@ const Login = () => {
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px", position: "relative" }}>
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <input
@@ -49,24 +49,6 @@ const Login = () => {
                 <button type="submit">Login</button>
             </form>
             <p>{message}</p>
-
-            {/* Tiny button to go to home */}
-            <button 
-                onClick={() => navigate("/")} 
-                style={{
-                    position: "absolute",
-                    top: "10px",
-                    right: "10px",
-                    fontSize: "12px",
-                    padding: "5px 10px",
-                    border: "none",
-                    backgroundColor: "#ddd",
-                    cursor: "pointer",
-                    borderRadius: "5px"
-                }}
-            >
-                Go to Home
-            </button>
         </div>
     );
 };
