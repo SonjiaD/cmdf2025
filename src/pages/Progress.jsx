@@ -7,16 +7,16 @@ function Progress() {
   const [dailyAccuracy, setDailyAccuracy] = useState(0);
   const [weeklyAccuracy, setWeeklyAccuracy] = useState(0);
 
-  // temporary until exercises are implemented
   const increaseAccuracy = () => {
     setDailyAccuracy((prev) => (prev >= 100 ? 100 : prev + 5));
     setWeeklyAccuracy((prev) => (prev >= 100 ? 100 : prev + 3));
   };
-
+  
   const increaseProgress = () => {
     setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
   };
 
+  // buttons are temporary until exercises are implemented
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h1>Daily Progress</h1>

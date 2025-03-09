@@ -9,6 +9,10 @@ import Progress from "./pages/Progress";
 import SpeechToText from "./pages/SpeechToText"; // ✅ Import
 
 
+import Articulation from "./pages/Categories/Articulation";
+import Fluency from "./pages/Categories/Fluency";
+import Speaking from "./pages/Categories/Speaking";
+import Understanding from "./pages/Categories/Understanding";
 
 function App() {
   return (
@@ -19,7 +23,6 @@ function App() {
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/speech-to-text" element={<SpeechToText />} />
       </Routes>
     </BrowserRouter>
   );

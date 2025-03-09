@@ -1303,6 +1303,14 @@ motion-utils@^12.4.10:
   resolved "https://registry.npmjs.org/motion-utils/-/motion-utils-12.4.10.tgz"
   integrity sha512-NPwZd94V013SwRf++jMrk2+HEBgPkeIE2RiOzhAuuQlqxMJPkKt/LXVh6Upl+iN8oarSGD2dlY5/bqgsYXDABA==
 
+motion@^12.4.10:
+  version "12.4.10"
+  resolved "https://registry.npmjs.org/motion/-/motion-12.4.10.tgz"
+  integrity sha512-AM21Lyfn7ZHO+nBuHJEA2REFgS3kUM83CLZnzM0ZY1/sVeKGkCtV4LF4O/YsQXyZ9mrUrrnTaUkKquS4eaIYjg==
+  dependencies:
+    framer-motion "^12.4.10"
+    tslib "^2.4.0"
+
 ms@^2.1.3:
   version "2.1.3"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
