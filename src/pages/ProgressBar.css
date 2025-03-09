@@ -1,18 +1,21 @@
-.progress-container {
-    display: flex;
-    width: 50%;
-    background-color: #e0e0df;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 25px;
-    margin: 10px 0;
-  }
+
   
   .progress-filler {
     height: 100%;
-    background-color: #4caf50;
+    background-color: #E0E2CC;
     text-align: right;
     line-height: 25px;
     transition: width 0.5s ease-in-out;
   }
   
+
+  .progress-title{
+    font-size: 30px;
+    text-align: left;
+  }
+
+
+  .Banner{
+    border-radius: 30px;
+    margin-top: 250px;
+  }
