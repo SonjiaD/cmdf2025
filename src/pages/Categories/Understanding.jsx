@@ -147,7 +147,8 @@ const Understanding = () => {
 
   return (
     <div className="p-4 text-center">
-      <h2 className="text-2xl font-bold">🎙️ Image Identification</h2>
+      <h2 className="text-2xl font-bold" style={{ marginTop: "150px" }}>🎙️ Image Identification</h2>
+
 
       {/* Display progress bar */}
       <div className="progress-container">
