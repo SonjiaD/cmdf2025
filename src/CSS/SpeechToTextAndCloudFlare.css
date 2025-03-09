@@ -1,0 +1,118 @@
+/* chat container */
+.max-w-md {
+  max-width: 480px;
+  max-height: 500px;
+  width: 100%;
+  background-color: var(--white);
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  position: relative;
+}
+
+/* message list */
+.h-80 {
+  height: 70%;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+
+.my-2 {
+  margin: 10px 0;
+}
+
+/* user message */
+.bg-blue-200 {
+  background-color: #e0f7fa;
+  color: #424242;
+  text-align: left;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 80%;
+  margin-left: auto;
+}
+
+/* bot message */
+.bg-gray-200 {
+  background-color: var(--golden-hour);
+  color: #424242;
+  text-align: left;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 80%;
+}
+
+/* record button */
+button {
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  outline: none; /* Remove default focus outline */
+}
+
+button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.bg-blue-500 {
+  background-color: var(--morning-mist);
+  color: white;
+  border: none;
+}
+
+.bg-red-500 {
+  background-color: var(--coral-reef);
+  color: white;
+  border: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+button span {
+  font-size: 18px;
+}
+
+/* bot answer */
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* loading */
+div > .loading {
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* scroll */
+.h-80::-webkit-scrollbar {
+  width: 8px;
+}
+
+.h-80::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.h-80::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
