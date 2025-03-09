@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 686 362">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9b7a70;
+      }
+
+      .cls-2 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-3 {
+        fill: #e0e2cd;
+      }
+
+      .cls-4 {
+        fill: #fbf1e6;
+      }
+
+      .cls-5 {
+        fill: #6d605f;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: #6d605f;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 5.07px;
+      }
+    </style>
+    <filter id="drop-shadow-1" x="150.16" y="40.16" width="404" height="299" filterUnits="userSpaceOnUse">
+      <feOffset dx="8.58" dy="8.58"/>
+      <feGaussianBlur result="blur" stdDeviation="6.13"/>
+      <feFlood flood-color="#fff" flood-opacity=".73"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="football">
+    <g id="football-2" data-name="football">
+      <g id="m_m" data-name="m&amp;amp;m">
+        <g id="alligator">
+          <g id="carrot">
+            <rect class="cls-3" width="686" height="362"/>
+          </g>
+        </g>
+      </g>
+      <g class="cls-2">
+        <path class="cls-1" d="M160.66,262.32C210.82,79.4,330.56,21.77,506.5,65.33c13.54,3.35,21.79,17,18.95,30.66-39.72,191.24-154.21,259.37-354.26,186.64-8.04-2.92-12.79-12.05-10.53-20.3Z"/>
+        <path class="cls-4" d="M174.83,217.09s60.12,81.96,76.06,88.3c15.95,6.34,49.12,5.69,49.12,5.69l-103.24-139.76c-6.49,10.3-14.08,27.23-21.94,45.77Z"/>
+        <path class="cls-4" d="M458.06,55.7s49.71,85.16,48.9,102.35c-.81,17.19-18.54,45.81-18.54,45.81l-82.63-152.92c17.84-.31,35.22,1.57,52.27,4.77Z"/>
+        <circle class="cls-5" cx="300.01" cy="215.45" r="10.51"/>
+        <circle class="cls-5" cx="414.59" cy="148.87" r="10.51"/>
+        <path class="cls-6" d="M354.32,191.07c4.49,7.43,24.25-4.51,19.76-11.94"/>
+        <path class="cls-4" d="M167.32,275.41c-4.2,3.05-6.31-.23-7.33-6.78,8.62-8.52,213.5-208.48,359.63-195.24,3.33,2.64,4.84,8.25,5.36,9.94-141.06-12.79-355.59,190.03-357.67,192.09Z"/>
+        <path class="cls-4" d="M348.46,126.32c-15.71-15.81-7.81-23.66,7.9-7.86l5.44,5.47c13.37,13.46,5.47,21.31-7.9,7.86l-5.44-5.47Z"/>
+        <path class="cls-4" d="M322.8,140.79c-15.71-15.81-7.81-23.66,7.9-7.86l5.44,5.47c13.37,13.46,5.47,21.31-7.9,7.86l-5.44-5.47Z"/>
+        <path class="cls-4" d="M298.11,158.87c-15.71-15.81-7.81-23.66,7.9-7.86l5.44,5.47c13.37,13.46,5.47,21.31-7.9,7.86l-5.44-5.47Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
