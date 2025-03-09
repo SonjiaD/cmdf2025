@@ -1,18 +1,29 @@
 import React, { useState } from "react";
 
 function Progress() {
-  const [progress, setProgress] = useState(0);
+  const [dailyProgress, setDailyProgress] = useState(0);
+  const [weeklyProgress, setWeeklyProgress] = useState(0);
 
   const increaseProgress = () => {
-    setProgress((prev) => (prev >= 100 ? 100 : prev + 10));
+    setDailyProgress((prev) => (prev >= 100 ? 100 : prev + 20));
+    setWeeklyProgress((prev) => (prev >= 100 ? 100 : prev + 3));
   };
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
-      <h1>Progress Bar Example</h1>
+      <h1>Daily Progress</h1>
       <div style={styles.container}>
-        <div style={{ ...styles.filler, width: `${progress}%` }}>
-          <span style={styles.label}>{progress}%</span>
+        <div style={{ ...styles.filler, width: `${dailyProgress}%` }}>
+          <span style={styles.label}>{dailyProgress}%</span>
+        </div>
+      </div>
+      <button onClick={increaseProgress} style={styles.button}>
+        Increase Progress
+      </button>
+      <h1>Weekly Progress</h1>
+      <div style={styles.container}>
+        <div style={{ ...styles.filler, width: `${weeklyProgress}%` }}>
+          <span style={styles.label}>{weeklyProgress}%</span>
         </div>
       </div>
       <button onClick={increaseProgress} style={styles.button}>
