@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 686 362">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #6d605f;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 5.82px;
+      }
+
+      .cls-2 {
+        fill: #96957d;
+      }
+
+      .cls-3 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-4 {
+        fill: #fddcb4;
+      }
+
+      .cls-5 {
+        fill: #fbf1e6;
+      }
+
+      .cls-6 {
+        fill: #6d605f;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <filter id="drop-shadow-1" x="54.28" y="71.81" width="624" height="240" filterUnits="userSpaceOnUse">
+      <feOffset dx="8.05" dy="8.05"/>
+      <feGaussianBlur result="blur" stdDeviation="5.75"/>
+      <feFlood flood-color="#fff" flood-opacity=".73"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="357.95" y1="81.74" x2="357.95" y2="285.72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e1e2c9"/>
+      <stop offset=".58" stop-color="#e1e0c8"/>
+      <stop offset=".79" stop-color="#e1d9c5"/>
+      <stop offset=".94" stop-color="#e1cdc1"/>
+      <stop offset="1" stop-color="#e2c6bf"/>
+    </linearGradient>
+  </defs>
+  <g id="alligator">
+    <g id="alligator-2" data-name="alligator">
+      <g id="carrot">
+        <rect class="cls-4" width="686" height="362"/>
+      </g>
+      <g class="cls-3">
+        <g>
+          <polygon class="cls-2" points="362.3 134.09 352.68 115.18 342.05 132.66 332.78 114.42 322.47 131.39 313.47 113.69 302.39 131.91 321.76 132.56 321.7 132.64 341.66 133.31 341.6 133.4 362.3 134.09"/>
+          <polygon class="cls-2" points="373.37 115.97 362.29 134.19 382.99 134.88 373.37 115.97"/>
+          <polygon class="cls-2" points="394.06 116.75 382.98 134.98 403.68 135.67 394.06 116.75"/>
+          <polygon class="cls-2" points="414.75 117.54 403.67 135.76 424.36 136.45 414.75 117.54"/>
+          <polygon class="cls-2" points="435.44 118.33 424.36 136.55 445.05 137.24 435.44 118.33"/>
+          <polygon class="cls-2" points="456.13 119.12 445.05 137.34 465.74 138.03 456.13 119.12"/>
+          <polygon class="cls-2" points="476.82 119.9 465.74 138.12 486.43 138.81 476.82 119.9"/>
+        </g>
+        <g>
+          <g>
+            <path class="cls-7" d="M91.88,201.93l-28.37-99.81c.43-24.79,23.8-24.38,23.36.41l11.3.2c.48-27.49,24.12-27.08,23.64.41l61.46,1.07c.53-30.35,34.8-29.75,34.27.6l14.59.25c.47-27.2,38.33-26.17,38.33.49,0,0-6.83,29.42,44.91,24.43,51.74-4.99,190.16,9.19,213.54,16.28l123.45-40.97-94.56,90.88s-69.34,33.09-96.92,34.93l-6.83,43.6-96.13,6.3s22.33-19.96,27.32-21.54c4.99-1.58,3.15-24.16,3.15-24.16l-79.32.53-1.05,45.18-85.36,4.73s17.86-12.61,29.42-16.81c0,0-13.13-44.65-14.18-58.31-71.02,3.58-120.39.89-146.04-8.67Z"/>
+            <g>
+              <path class="cls-1" d="M82.66,171.19c24.77,8.89,43.31,8.96,61.99-5.52"/>
+              <polygon class="cls-5" points="127.49 190.26 134.27 175.66 119.63 179.66 127.49 190.26"/>
+              <polygon class="cls-5" points="95.12 188.16 103.29 179.66 87.9 176.24 95.12 188.16"/>
+            </g>
+          </g>
+          <circle class="cls-6" cx="254.14" cy="104.85" r="7.58"/>
+          <circle class="cls-6" cx="199.8" cy="102.75" r="7.58"/>
+          <circle class="cls-6" cx="108.41" cy="98.4" r="3.79"/>
+          <circle class="cls-6" cx="73.48" cy="98.09" r="3.79"/>
+        </g>
+        <polygon class="cls-2" points="302.39 165.38 308.6 177.61 315.47 166.31 315.9 165.9 315.73 165.89 315.76 165.83 302.39 165.38"/>
+        <polygon class="cls-2" points="344.44 183.73 350.65 195.95 357.52 184.65 357.95 184.24 357.78 184.23 357.81 184.18 344.44 183.73"/>
+        <polygon class="cls-2" points="379.82 163.43 386.03 175.66 392.9 164.36 393.33 163.94 393.16 163.94 393.19 163.88 379.82 163.43"/>
+        <polygon class="cls-2" points="414.02 189.84 420.23 202.06 427.1 190.76 427.53 190.35 427.36 190.34 427.39 190.29 414.02 189.84"/>
+      </g>
+    </g>
+  </g>
+</svg>
