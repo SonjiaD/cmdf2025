@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import "../CSS/SpeechToTextAndCloudFlare.css";
+import CircularProgress from "@mui/material/CircularProgress";
 import { run } from "../index.js";
 
 const SpeechToText = ({ onTranscriptChange, onStopRecording }) => {
   const [isRecording, setIsRecording] = useState(false);
-  const [transcript, setTranscript] = useState("");
   const [recognition, setRecognition] = useState(null);
 
   useEffect(() => {
@@ -18,8 +19,7 @@ const SpeechToText = ({ onTranscriptChange, onStopRecording }) => {
         for (let i = 0; i < event.results.length; i++) {
           finalTranscript += event.results[i][0].transcript;
         }
-        setTranscript(finalTranscript);
-        onTranscriptChange(finalTranscript); // Ensure the parent component gets updated
+        onTranscriptChange(finalTranscript); // Update transcript in real-time
       };
 
       speechRecognition.onerror = (event) => {
@@ -45,7 +45,7 @@ const SpeechToText = ({ onTranscriptChange, onStopRecording }) => {
     if (recognition) {
       setIsRecording(false);
       recognition.stop();
-      onStopRecording(transcript); // Pass the transcript to the parent when recording stops
+      onStopRecording(); // Trigger parent action
     }
   };
 
@@ -60,14 +60,11 @@ const SpeechToText = ({ onTranscriptChange, onStopRecording }) => {
       >
         {isRecording ? "Stop Recording" : "Start Recording"}
       </button>
-      <p className="mt-4 text-lg">
-        {transcript ? `📝 ${transcript}` : "No transcription yet..."}
-      </p>
     </div>
   );
 };
 
-const CloudFlare = ({ inputValue }) => {
+const CloudFlare = ({ inputValue, onBotResponse, onLoadingChange }) => {
   const [responseData, setResponseData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -88,21 +85,24 @@ const CloudFlare = ({ inputValue }) => {
       };
 
       const fetchData = async () => {
+        onLoadingChange(true);
         try {
           const response = await run("@cf/meta/llama-3-8b-instruct", input);
           setResponseData(response);
+          onBotResponse(response.result.response); // Send bot response to parent
         } catch (error) {
           setError(error);
+        } finally {
+          onLoadingChange(false);
         }
       };
 
       fetchData();
     }
-  }, [inputValue]); // Dependency on inputValue
+  }, [inputValue, onBotResponse, onLoadingChange]);
 
   return (
     <div>
-      <h2>API Response</h2>
       {error && <div>Error: {error.message}</div>}
       {!responseData ? (
         <div>Loading...</div>
@@ -115,25 +115,69 @@ const CloudFlare = ({ inputValue }) => {
 
 const SpeechToTextAndCloudFlare = () => {
   const [transcript, setTranscript] = useState("");
+  const [messages, setMessages] = useState([]);
   const [shouldFetch, setShouldFetch] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTranscriptChange = (newTranscript) => {
     setTranscript(newTranscript);
   };
 
-  const handleStopRecording = (finalTranscript) => {
-    console.log("Recording stopped, calling API...");
-    setTranscript(finalTranscript); // Ensure the final transcript is set
-    setShouldFetch(true); // Trigger the fetch
+  const handleStopRecording = () => {
+    setShouldFetch(true); // Trigger CloudFlare fetch
   };
 
+  const handleBotResponse = (response) => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { type: "bot", text: response },
+    ]);
+  };
+
+  const handleUserMessage = (message) => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { type: "user", text: message },
+    ]);
+  };
+
+  useEffect(() => {
+    if (shouldFetch && transcript) {
+      handleUserMessage(transcript); // Add user's message
+      setShouldFetch(false); // Prevent double-fetching
+    }
+  }, [shouldFetch, transcript]);
+
   return (
-    <div>
+    <div className="max-w-md mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg">
+      <div className="h-80 overflow-y-scroll mb-4">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`my-2 p-2 rounded ${
+              msg.type === "user" ? "bg-blue-200" : "bg-gray-200"
+            }`}
+          >
+            {msg.text}
+          </div>
+        ))}
+        {isLoading && (
+          <div className="text-center my-2">
+            <p>Loading...</p>
+          </div>
+        )}
+      </div>
       <SpeechToText
         onTranscriptChange={handleTranscriptChange}
         onStopRecording={handleStopRecording}
       />
-      {shouldFetch && <CloudFlare inputValue={transcript} />}
+      {shouldFetch && (
+        <CloudFlare
+          inputValue={transcript}
+          onBotResponse={handleBotResponse}
+          onLoadingChange={setIsLoading}
+        />
+      )}
     </div>
   );
 };
