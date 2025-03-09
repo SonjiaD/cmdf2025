@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 
 function Progress() {
-  const [dailyProgress, setDailyProgress] = useState(0);
-  const [weeklyProgress, setWeeklyProgress] = useState(0);
+  const [dailyProgress, setProgress] = useState(0);
+
+  // needs to use saved weekly data
+  const [dailyAccuracy, setDailyAccuracy] = useState(0);
+  const [weeklyAccuracy, setWeeklyAccuracy] = useState(0);
+
+  // temporary until exercises are implemented
+  const increaseAccuracy = () => {
+    setDailyAccuracy((prev) => (prev >= 100 ? 100 : prev + 5));
+    setWeeklyAccuracy((prev) => (prev >= 100 ? 100 : prev + 3));
+  };
 
   const increaseProgress = () => {
-    setDailyProgress((prev) => (prev >= 100 ? 100 : prev + 20));
-    setWeeklyProgress((prev) => (prev >= 100 ? 100 : prev + 3));
+    setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
   };
 
   return (
@@ -20,14 +28,23 @@ function Progress() {
       <button onClick={increaseProgress} style={styles.button}>
         Increase Progress
       </button>
-      <h1>Weekly Progress</h1>
+      <h1>Daily Accuracy</h1>
       <div style={styles.container}>
-        <div style={{ ...styles.filler, width: `${weeklyProgress}%` }}>
-          <span style={styles.label}>{weeklyProgress}%</span>
+        <div style={{ ...styles.filler, width: `${dailyAccuracy}%` }}>
+          <span style={styles.label}>{dailyAccuracy}%</span>
         </div>
       </div>
-      <button onClick={increaseProgress} style={styles.button}>
-        Increase Progress
+      <button onClick={increaseAccuracy} style={styles.button}>
+        Increase Accuracy
+      </button>
+      <h1>Weekly Accuracy</h1>
+      <div style={styles.container}>
+        <div style={{ ...styles.filler, width: `${weeklyAccuracy}%` }}>
+          <span style={styles.label}>{weeklyAccuracy}%</span>
+        </div>
+      </div>
+      <button onClick={increaseAccuracy} style={styles.button}>
+        Increase Accuracy
       </button>
     </div>
   );
