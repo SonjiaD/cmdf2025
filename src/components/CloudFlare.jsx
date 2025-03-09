@@ -9,11 +9,9 @@ const CloudFlare = ({
 }) => {
   const [responseData, setResponseData] = useState(null);
   const [error, setError] = useState(null);
-  const [completeFetch, setCompleteFetch] = useState(false);
+
   useEffect(() => {
     if (inputValue) {
-      setCompleteFetch(false);
-
       const input = {
         messages: [
           {
@@ -32,23 +30,20 @@ const CloudFlare = ({
         onLoadingChange(true);
 
         try {
-          if (!completeFetch) {
-            const response = await run("@cf/meta/llama-3-8b-instruct", input);
-            setResponseData(response);
-            setCompleteFetch(true);
-            onBotResponse(response.result.response);
-          }
+          const response = await run("@cf/meta/llama-3-8b-instruct", input);
+          setResponseData(response);
+          onBotResponse(response.result.response); // Send bot response to parent
         } catch (error) {
           setError(error);
         } finally {
           onLoadingChange(false);
-          onFetchComplete();
+          onFetchComplete(); // Notify parent that fetch is complete
         }
       };
 
       fetchData();
     }
-  }, [inputValue]);
+  }, [inputValue, onBotResponse, onLoadingChange, onFetchComplete]);
 
   return (
     <div>

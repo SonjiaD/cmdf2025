@@ -127,6 +127,7 @@ const SpeechToTextAndCloudFlare = () => {
               inputValue={transcript}
               onBotResponse={handleBotResponse}
               onLoadingChange={setIsLoading}
+              onFetchComplete={() => setShouldFetch(false)} // Reset shouldFetch after fetch
             />
           )}
         </motion.div>
