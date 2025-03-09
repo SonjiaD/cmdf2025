@@ -7,12 +7,12 @@ function Exercises() {
   return <>
     <h3>What would you like to work on today?</h3>
     <div className="board-row">
-        <button onClick={() => navigate("/speech-to-text")}>Articulation</button>
-        <button onClick={() => navigate("/fluency")}>Fluency</button>
+        <div className="board-row-01"><button  onClick={() => navigate("/speech-to-text")}>Articulation</button></div>
+        <button className="board-row-02" onClick={() => navigate("/fluency")}>Fluency</button>
       </div>
       <div className="board-row">
-        <button onClick={() => navigate("/language")}>Language</button>
-        <button onClick={() => navigate("/understanding")}>Understanding</button>
+        <button  className="board-row-03" onClick={() => navigate("/language")}>Language</button>
+        <button  className="board-row-04" onClick={() => navigate("/understanding")}>Understanding</button>
       </div>
     </>;
 }
