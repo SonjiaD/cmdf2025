@@ -1,3 +1,28 @@
+/* Button to toggle chat visibility with "+" symbol */
+.toggle-chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px; /* Slightly increased width */
+  height: 60px; /* Slightly increased height */
+  background-color: var(--morning-mist);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 32px; /* Adjust font size for better alignment */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the "+" vertically and horizontally */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-chat-button:hover {
+  transform: scale(1.1);
+  background-color: var(--coral-reef);
+}
+
 /* chat container */
 .max-w-md {
   max-width: 480px;
@@ -13,6 +38,14 @@
   height: 80%;
   position: relative;
   margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.max-w-md.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* message list */
