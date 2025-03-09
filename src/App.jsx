@@ -28,10 +28,14 @@ function App() {
   );
 
   useEffect(() => {
-    // Listen for changes in localStorage (when user logs in)
     const checkAuth = () => setIsAuthenticated(!!localStorage.getItem("user"));
-    window.addEventListener("storage", checkAuth);
-    return () => window.removeEventListener("storage", checkAuth);
+
+    // Listen for authentication changes
+    window.addEventListener("authChange", checkAuth);
+
+    return () => {
+      window.removeEventListener("authChange", checkAuth);
+    };
   }, []);
 
   return (
