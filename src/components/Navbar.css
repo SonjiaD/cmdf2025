@@ -2,10 +2,11 @@
     display: flex;
     top: 0;
     width: 100%;
-    background: #333;
-    color: white;
-    padding: 15px;
+    background: #d4f0ff;
+    color: rgb(0, 0, 0);
     z-index: 1000;
+    padding-top: 15px;
+    padding-bottom: 15px;
     align-items: center;
     justify-content: center;
   }
@@ -18,6 +19,6 @@
   }
   
   .navbar a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
   }
