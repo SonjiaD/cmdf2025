@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import AnimatedHeading from "../components/AnimatedHeading";
 import ContentBox from "../components/ContentBox";
 import SpeechToTextAndCloudFlare from "../components/SpeechToTextAndCloudFlare";
+import "./Home.css";
 
 function Home() {
   return (
