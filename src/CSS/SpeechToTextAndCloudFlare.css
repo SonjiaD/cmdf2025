@@ -1,8 +1,8 @@
 /* chat container */
 .max-w-md {
   max-width: 450px;
-  max-height: 550px;
-  min-height: 550px;
+  max-height: 560px;
+  min-height: 560px;
   width: 100%;
   background-color: var(--white);
   overflow-y: auto;
