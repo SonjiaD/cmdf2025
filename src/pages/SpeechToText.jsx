@@ -37,6 +37,7 @@ const SpeechToText = () => {
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
   const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
+  const [progress, setProgress] = useState(0); // Track progress
 
   useEffect(() => {
     if ("webkitSpeechRecognition" in window) {
@@ -81,6 +82,10 @@ const SpeechToText = () => {
     }
   };
 
+  const increaseProgress = () => {
+    setProgress((prev) => (prev >= 5 ? 5 : prev + 1));
+  };
+
   const stopRecording = () => {
     if (recognition) {
       setIsRecording(false);
@@ -103,6 +108,13 @@ const SpeechToText = () => {
   return (
     <div className="p-4 text-center">
       <h2 className="text-2xl font-bold">🎙️ Speech-to-Text Practice</h2>
+
+      {/* Display progress bar */}
+      <div style={styles.container}>
+        <div style={{ ...styles.filler, width: `${progress}%` }}>
+          <span style={styles.label}>{progress}%</span>
+        </div>
+      </div>
       
       {/* Display current target word */}
       <div className="mt-4">
@@ -130,14 +142,38 @@ const SpeechToText = () => {
       {/* Button to go to the next word */}
       {accuracy >= 80 && (
         <button
-          onClick={handleNextWord}
+          onClick={function(event){handleNextWord(); increaseProgress();}}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
         >
           Next Phrase
         </button>
       )}
+      
     </div>
   );
+};
+
+const styles = {
+  container: {
+    width: "100%",
+    backgroundColor: "#e0e0df",
+    borderRadius: "5px",
+    overflow: "hidden",
+    height: "25px",
+    margin: "10px 0"
+  },
+  filler: {
+    height: "100%",
+    backgroundColor: "#4caf50",
+    textAlign: "right",
+    lineHeight: "25px",
+    transition: "width 0.5s ease-in-out"
+  },
+  label: {
+    padding: "5px",
+    color: "white",
+    fontWeight: "bold"
+  }
 };
 
 export default SpeechToText;

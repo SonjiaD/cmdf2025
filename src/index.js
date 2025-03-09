@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 export const run = async (model, input) => {
     try {
         const response = await axios.post(
@@ -7,8 +8,7 @@ export const run = async (model, input) => {
             input,
             {
                 headers: {
-                    Authorization: "Bearer 7TW6G7Lr3uFdyQe1RF77660zUBVvDX535Xvwo0z0",
-
+                    Authorization: `Bearer ${API_TOKEN}`
                 },
                 withCredentials: true,
             }
