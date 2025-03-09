@@ -1,8 +1,15 @@
-#root {
+:root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --fizzy-lime: #ced183;
+  --morning-mist: #d7dee6;
+  --coral-reef: #f49f9a;
+  --golden-hour: #eed397;
+  --cantaloupe: #fcc586;
+  --green-tea: #9eac73;
+  --white: #fff;
 }
 
 .logo {

@@ -27,7 +27,6 @@ function Home() {
         <h2 className="text-2xl font-semibold text-orange-500 mb-4 text-center">
           Chat with Our AI Speech Therapy Assistant
         </h2>
-        {/* <CloudFlare /> */}
         <SpeechToTextAndCloudFlare />
       </div>
     </Layout>
