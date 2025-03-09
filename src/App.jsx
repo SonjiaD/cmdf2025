@@ -8,6 +8,9 @@ import Progress from "./pages/Progress";
 import SpeechToText from "./pages/SpeechToText";
 import Breathe from "./pages/Breathe";
 import "./App.css";
+import Login from "./pages/Login";
+
+
 
 import Articulation from "./pages/Categories/Articulation";
 import Fluency from "./pages/Categories/Fluency";
@@ -29,6 +32,9 @@ function App() {
         <Route path="/understanding" element={<Understanding />} />
         <Route path="/speech-to-text" element={<SpeechToText />} />
         <Route path="/breathe" element={<Breathe />} />
+        
+        <Route path="/login" element={<Login />} />
+
       </Routes>
     </BrowserRouter>
   );

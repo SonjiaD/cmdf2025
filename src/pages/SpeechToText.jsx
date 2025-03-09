@@ -39,7 +39,8 @@ const SpeechToText = () => {
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
   const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
-  const { progress, increaseProgress } = useProgressStore();
+  //const { progress, increaseProgress } = useProgressStore();
+  const { progress, increaseProgress, setMatchAccuracy } = useProgressStore();
 
   useEffect(() => {
     if ("webkitSpeechRecognition" in window) {
@@ -63,6 +64,7 @@ const SpeechToText = () => {
         const matchAccuracy = ((1 - distance / maxLength) * 100).toFixed(2);
 
         setAccuracy(matchAccuracy);
+        setMatchAccuracy(matchAccuracy); // set global accuracy
       };
 
       speechRecognition.onerror = (event) => {
