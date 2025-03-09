@@ -1,4 +1,5 @@
 .progress-container {
+    display: flex;
     width: 50%;
     background-color: #e0e0df;
     border-radius: 5px;

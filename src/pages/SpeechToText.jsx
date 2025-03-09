@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useProgressStore from "../useProgressStore";
 import "./ProgressBar.css";
 
 // Levenshtein Distance function to compare strings (text comparison)
@@ -38,7 +39,7 @@ const SpeechToText = () => {
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
   const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
-  const [progress, setProgress] = useState(0); // Track progress
+  const { progress, increaseProgress } = useProgressStore();
 
   useEffect(() => {
     if ("webkitSpeechRecognition" in window) {
@@ -83,9 +84,9 @@ const SpeechToText = () => {
     }
   };
 
-  const increaseProgress = () => {
-    setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
-  };
+  //const increaseProgress = () => {
+  //  setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
+  //};
 
   const stopRecording = () => {
     if (recognition) {
