@@ -50,11 +50,11 @@ const GetText = ({ onTranscriptChange, onStopRecording }) => {
     <div className="p-4 text-center">
       <button
         onClick={isRecording ? stopRecording : startRecording}
-        className={`mt-4 px-4 py-2 text-white rounded ${
+        className={`mt-4 px-4 py-2 text-white rounded record ${
           isRecording ? "bg-red-500" : "bg-blue-500"
         }`}
       >
-        {isRecording ? "Stop Recording" : "Start Recording"}
+        {isRecording ? "Stop Speaking" : "Start Speaking"}
       </button>
     </div>
   );

@@ -29,13 +29,22 @@ const getLevenshteinDistance = (a, b) => {
   return tmp[a.length][b.length];
 };
 
-// List of consonant & vowel pairings
+// List of words associated with images
 const words = [
   "Alligator",
   "Rainbow",
   "Football",
   "M&M",
   "Carrot"
+];
+
+// List of images
+const images = [
+  AlligatorImage, 
+  RainbowImage, 
+  FootballImage, 
+  MMImage, 
+  CarrotImage
 ];
   
   
@@ -45,7 +54,8 @@ const Understanding = () => {
   const [recognition, setRecognition] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
-  const [currentWordIndex, setCurrentIndex] = useState(0);  // Track the current word
+  const [targetImage, setTargetImage] = useState(images[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);  // Track the current word
   const [currentDone, setCurrentDone] = useState(0); 
   const [attempts, setAttempts] = useState(0); // Track number of attempts
   const [requiredAccuracy, setRequiredAccuracy] = useState(80);
@@ -127,6 +137,7 @@ const Understanding = () => {
       setCurrentIndex(nextIndex);
       setCurrentDone(nextDone);
       setTargetWord(words[nextIndex]);
+      setTargetImage(images[nextIndex]);
       setTranscript("");
       setAccuracy(null);
     } else {
@@ -136,17 +147,22 @@ const Understanding = () => {
 
   return (
     <div className="p-4 text-center">
-      <h2 className="text-2xl font-bold">🎙️ Speech-to-Text Practice</h2>
+      <h2 className="text-2xl font-bold">🎙️ Image Identification</h2>
 
       {/* Display progress bar */}
       <div className="progress-container">
         <div className="progress-filler" style={{width: `${progress}%` }}>
         </div>
       </div>
+
+      {/* Display Image */}
+      <div className="mt-4">
+        <img src={targetImage} alt={targetWord} className="mx-auto h-40" />
+      </div>
       
       {/* Display current target word */}
       <div className="mt-4">
-        <h3 className="text-xl">Target Phrase: <span className="font-semibold">{targetWord}</span></h3>
+        <h3 className="text-xl">Target Descriptor: <span className="font-semibold">{targetWord}</span></h3>
       </div>
 
       <button
@@ -163,7 +179,7 @@ const Understanding = () => {
       {/* Display accuracy score */}
       {accuracy !== null && (
         <p className="mt-4">
-          <strong>Accuracy: </strong>{accuracy}% (Target Word: {targetWord})
+          <strong>Accuracy: </strong>{accuracy}% (Target Descriptor: {targetWord})
         </p>
       )}
 
@@ -173,7 +189,7 @@ const Understanding = () => {
           onClick={function(event){handleNextWord(); increaseProgress();}}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
         >
-          Next Phrase
+          Next Image
         </button>
       )}
       

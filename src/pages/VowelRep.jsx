@@ -144,7 +144,7 @@ const VowelRep = () => {
       
       {/* Display current target word */}
       <div className="mt-4">
-        <h3 className="text-xl">Target Phrase: <span className="font-semibold">{targetWord}</span></h3>
+        <h3 className="text-xl">Target Sounds: <span className="font-semibold">{targetWord}</span></h3>
       </div>
 
       <button
@@ -161,7 +161,7 @@ const VowelRep = () => {
       {/* Display accuracy score */}
       {accuracy !== null && (
         <p className="mt-4">
-          <strong>Accuracy: </strong>{accuracy}% (Target Word: {targetWord})
+          <strong>Accuracy: </strong>{accuracy}% (Target Sounds: {targetWord})
         </p>
       )}
 
@@ -171,7 +171,7 @@ const VowelRep = () => {
           onClick={function(event){handleNextWord(); increaseProgress();}}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
         >
-          Next Phrase
+          Next Set
         </button>
       )}
       

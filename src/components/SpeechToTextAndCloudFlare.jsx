@@ -9,14 +9,14 @@ const SpeechToTextAndCloudFlare = () => {
   const [messages, setMessages] = useState([]);
   const [shouldFetch, setShouldFetch] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isChatVisible, setIsChatVisible] = useState(false); // Track visibility of chatbox
+  const [isChatVisible, setIsChatVisible] = useState(false);
 
   const handleTranscriptChange = (newTranscript) => {
     setTranscript(newTranscript);
   };
 
   const handleStopRecording = () => {
-    setShouldFetch(true); // Trigger CloudFlare fetch
+    setShouldFetch(true);
   };
 
   const handleBotResponse = (response) => {
@@ -35,32 +35,35 @@ const SpeechToTextAndCloudFlare = () => {
 
   useEffect(() => {
     if (shouldFetch && transcript) {
-      handleUserMessage(transcript); // Add user's message
-      setShouldFetch(false); // Prevent double-fetching
+      handleUserMessage(transcript);
+      setShouldFetch(false);
     }
   }, [shouldFetch, transcript]);
 
   return (
     <div className="relative">
-      {/* Button to toggle chat visibility with "+" symbol */}
+      {/* Toggle chat visibility */}
       <button
-        className="toggle-chat-button"
+        className="fixed bottom-4 right-4 text-white p-3 rounded-full shadow-lg z-50 toggle-chat-button "
         onClick={() => setIsChatVisible((prev) => !prev)}
       >
-        +
+        {isChatVisible ? "×" : "+"}
       </button>
 
-      {/* Conditionally render the chatbox with framer-motion for smooth transition */}
+      {/* Draggable chatbox */}
       {isChatVisible && (
         <motion.div
+          drag
+          dragElastic={0.2}
+          dragConstraints={{ top: -700, bottom: 500, left: -500, right: 500 }}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 1.5 }}
-          className="max-w-md mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg"
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-4 left-4 w-80 max-w-md p-4 bg-white rounded-lg shadow-lg z-40"
         >
-          <h2 className="text-2xl font-semibold text-orange-500 mb-4 text-center">
-            Chat with Our AI Speech Therapy Assistant
+          <h2 className="text-2xl font-semibold mb-4 text-center">
+            Chat with Our AI
           </h2>
           <div className="h-80 overflow-y-scroll mb-4">
             {messages.map((msg, index) => (
