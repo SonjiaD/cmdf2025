@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Exercises.css";
 import AnimatedHeading from "../components/AnimatedHeading";
+import exerciseBanner from "/src/assets/banner.svg";
 
 
 function Exercises() {
@@ -9,7 +10,7 @@ function Exercises() {
 
   return (
     <>
-      
+      <img className="Banner" src={exerciseBanner} alt="Exercise Banner" />
       
       <div className="title-container">
       <div className="text-container">
