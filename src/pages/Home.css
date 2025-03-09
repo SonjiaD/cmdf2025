@@ -1,93 +1,87 @@
 html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #FFF;
-  }
-  
-  .title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;  /* Align text to the left inside the container */
-  }
-  
-  .text-container .title {
-    font-size: 48px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .text-container .title-subtitle {
-    font-size: 24px;
-    font-weight: normal;
-    color: #777;
-  }
-  
-  .mt-10 {
-    margin-top: 10px;
-  }
-  
-  .max-w-3xl {
-    max-width: 800px;
-    width: 100%;
-  }
+  height: 100%;
+  margin: 0;
+  color: #3D2B29; /* Dark brown font color for all text */
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFF;
+}
 
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
 
-  .logoImage {
-    width: 700px;  /* Adjust this to make the image bigger */
-    height: auto;   /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it still scales responsively */
-  }
-  
-  
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
 
-  /*lists*/
+.text-container .title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #3D2B29; /* Dark brown */
+}
+
+.text-container .title-subtitle {
+  font-size: 24px;
+  font-weight: normal;
+  color: #5A4543; /* Slightly lighter brown */
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.max-w-3xl {
+  max-width: 800px;
+  width: 100%;
+}
+
+.logoImage {
+  width: 700px;
+  height: auto;
+  max-width: 100%;
+}
+
 /* Solution Box */
 .solution-Box {
-    display: flex;
-    width: 714px;
-    flex-direction: column;
-    align-items: flex-start; 
-    gap: 15px;
-    padding: 64px;
-  }
-  
-  /* Title */
-  .list-title {
-    font-size: 32px;
-    font-weight: bold; 
-    padding-left: 0;
-    margin-left: 0;  
+  display: flex;
+  width: 714px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 64px;
+}
 
-  }
-  
-  /* List */
-  .list-desc {
-    font-size: 20px;
-    text-align: left; 
-    list-style-position: inside; 
-  }
-  
+/* Title */
+.list-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3D2B29; /* Dark brown */
+}
 
-  ul {
-    padding-left: 0; 
-    margin-left: 0;  
-  }
-  
+/* List */
+.list-desc {
+  font-size: 20px;
+  text-align: left;
+  list-style-position: inside;
+  color: #3D2B29; /* Dark brown */
+}
+
+ul {
+  padding-left: 0;
+  margin-left: 0;
+  color: #3D2B29; /* Dark brown */
+}
