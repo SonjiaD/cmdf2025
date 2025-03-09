@@ -6,7 +6,7 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    const navigate = useNavigate(); // <-- useNavigate for redirection
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -16,7 +16,7 @@ const Login = () => {
                 password
             });
 
-            // Store user session (e.g., using localStorage)
+            // Store user session
             localStorage.setItem("user", JSON.stringify(response.data.user));
 
             // Redirect to Home Page
@@ -26,8 +26,15 @@ const Login = () => {
         }
     };
 
+    const handleSkipLogin = () => {
+        // Simulate authentication for the user
+        localStorage.setItem("user", JSON.stringify({ username: "guest" }));
+        navigate("/");
+        window.dispatchEvent(new Event("storage")); // Notify other components of change
+    };
+
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <div style={{ textAlign: "center", marginTop: "50px", position: "relative" }}>
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <input
@@ -49,6 +56,24 @@ const Login = () => {
                 <button type="submit">Login</button>
             </form>
             <p>{message}</p>
+
+            {/* Tiny "Skip Login" button */}
+            <button
+                onClick={handleSkipLogin}
+                style={{
+                    position: "absolute",
+                    top: "10px",
+                    right: "10px",
+                    fontSize: "12px",
+                    padding: "5px 10px",
+                    border: "none",
+                    backgroundColor: "#ddd",
+                    cursor: "pointer",
+                    borderRadius: "5px"
+                }}
+            >
+                Skip Login
+            </button>
         </div>
     );
 };
