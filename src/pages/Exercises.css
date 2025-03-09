@@ -4,7 +4,9 @@
   height: auto;
   display: block;
   object-fit: cover;
+  margin-top: 50px;  /* Correct margin-top syntax */
 }
+
 
 /* Title container styles */
 .title-container {

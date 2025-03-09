@@ -39,47 +39,45 @@ function Progress() {
 
 const styles = {
     wrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100vw",
-  },
-  banner: {
-    width: "100vw", 
-    height: "auto", 
-    objectFit: "cover",
-    margin: "0", 
-    borderRadius: "0px"
-  },
-  content: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-    width: "70%",
-    maxWidth: "1400px",
-    // padding: "20px 0",
-  },
-  container: {
-    backgroundColor: "#e0e0df",
-    borderRadius: "5px",
-    overflow: "hidden",
-    height: "60px",
-    width: "100%",
-    margin: "10px 0"
-  },
-  filler: {
-    height: "100%",
-    backgroundColor: "#B9BD94",
-    textAlign: "center",
-    lineHeight: "60px",
-    transition: "width 0.5s ease-in-out"
-  },
-  description: {
-    textAlign: "left",
-    fontSize: "16px",
-    color: "#3D2B29",
-    // marginBottom: "0px"
-  }
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100vw",
+    },
+    banner: {
+        width: "100vw", 
+        height: "auto", 
+        objectFit: "cover",
+        marginTop: "50px", // Added margin above the banner
+        borderRadius: "0px",
+    },
+    content: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        width: "70%",
+        maxWidth: "1400px",
+    },
+    container: {
+        backgroundColor: "#e0e0df",
+        borderRadius: "5px",
+        overflow: "hidden",
+        height: "60px",
+        width: "100%",
+        margin: "10px 0"
+    },
+    filler: {
+        height: "100%",
+        backgroundColor: "#B9BD94",
+        textAlign: "center",
+        lineHeight: "60px",
+        transition: "width 0.5s ease-in-out"
+    },
+    description: {
+        textAlign: "left",
+        fontSize: "16px",
+        color: "#3D2B29",
+    }
 };
 
 export default Progress;
