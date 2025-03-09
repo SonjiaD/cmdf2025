@@ -75,6 +75,7 @@ const SpeechToText = () => {
     }
   }, [targetWord]);
 
+  {/*Start recording audio*/}
   const startRecording = () => {
     if (recognition) {
       setIsRecording(true);
@@ -84,10 +85,7 @@ const SpeechToText = () => {
     }
   };
 
-  //const increaseProgress = () => {
-  //  setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
-  //};
-
+  {/*Stop recording audio*/}
   const stopRecording = () => {
     if (recognition) {
       setIsRecording(false);
