@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const navigate = useNavigate(); // <-- useNavigate for redirection
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -14,11 +16,11 @@ const Login = () => {
                 password
             });
 
-            // If login is successful, display success message
-            setMessage(response.data.message);
+            // Store user session (e.g., using localStorage)
+            localStorage.setItem("user", JSON.stringify(response.data.user));
 
-            // You can also store the username in localStorage to persist login state
-            localStorage.setItem("user", JSON.stringify({ username }));
+            // Redirect to Home Page
+            navigate("/");
         } catch (error) {
             setMessage(error.response?.data?.message || "Login failed");
         }
