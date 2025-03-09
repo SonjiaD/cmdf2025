@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import useProgressStore from "../useProgressStore";
 
 function Progress() {
-  const [dailyProgress, setProgress] = useState(0);
+  const points = useProgressStore((state) => state.points);
 
   // needs to use saved weekly data
   const [dailyAccuracy, setDailyAccuracy] = useState(0);
@@ -12,22 +13,17 @@ function Progress() {
     setWeeklyAccuracy((prev) => (prev >= 100 ? 100 : prev + 3));
   };
   
-  const increaseProgress = () => {
-    setProgress((prev) => (prev >= 100 ? 100 : prev + 20));
-  };
+  
 
   // buttons are temporary until exercises are implemented
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h1>Daily Progress</h1>
       <div style={styles.container}>
-        <div style={{ ...styles.filler, width: `${dailyProgress}%` }}>
-          <span style={styles.label}>{dailyProgress}%</span>
+        <div style={{ ...styles.filler, width: `${points}%` }}>
+          <span style={styles.label}>{points}%</span>
         </div>
       </div>
-      <button onClick={increaseProgress} style={styles.button}>
-        Increase Progress
-      </button>
       <h1>Daily Accuracy</h1>
       <div style={styles.container}>
         <div style={{ ...styles.filler, width: `${dailyAccuracy}%` }}>
