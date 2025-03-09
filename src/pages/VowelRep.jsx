@@ -23,16 +23,17 @@ const getLevenshteinDistance = (a, b) => {
   return tmp[a.length][b.length];
 };
 
-// List of longer tongue-twisters to practice
+// List of consonant & vowel pairings
 const words = [
-    "Peter Piper picked a peck of pickled peppers",
-    "She sells seashells by the seashore",
-    "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
-    "Fuzzy Wuzzy was a bear, Fuzzy Wuzzy had no hair",
-    "Betty Botter bought some butter, but she said the butter’s bitter"
+    "Ba, Be, Bi, Bo, Bu",
+    "Ca, Ce, Ci, Co, Cu",
+    "Fa, Fe, Fi, Fo, Fu",
+    "Ga, Ge, Gi, Go, Gu",
+    "Ra, Re, Ri, Ro, Ru",
+    "Sa, Se, Si, So, Su"
   ];
   
-const SpeechToText = () => {
+const VowelRep = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [recognition, setRecognition] = useState(null);
@@ -95,7 +96,7 @@ const SpeechToText = () => {
   };
 
   const handleNextWord = () => {
-    if (currentWordIndex < words.length - 1) {
+    if (currentWordIndex < 4) {
       const nextIndex = currentWordIndex + 1;
       setCurrentWordIndex(nextIndex);
       setTargetWord(words[nextIndex]);
@@ -153,4 +154,4 @@ const SpeechToText = () => {
   );
 };
 
-export default SpeechToText;
+export default VowelRep;
