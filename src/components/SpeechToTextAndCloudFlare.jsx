@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/SpeechToTextAndCloudFlare.css";
+import { motion } from "framer-motion";
 import CloudFlare from "./CloudFlare";
 import GetText from "./GetText";
 
@@ -49,12 +50,14 @@ const SpeechToTextAndCloudFlare = () => {
         +
       </button>
 
-      {/* Conditionally render the chatbox */}
+      {/* Conditionally render the chatbox with framer-motion for smooth transition */}
       {isChatVisible && (
-        <div
-          className={`max-w-md mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg ${
-            isChatVisible ? "visible" : ""
-          }`}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ duration: 1.5 }}
+          className="max-w-md mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg"
         >
           <h2 className="text-2xl font-semibold text-orange-500 mb-4 text-center">
             Chat with Our AI Speech Therapy Assistant
@@ -87,7 +90,7 @@ const SpeechToTextAndCloudFlare = () => {
               onLoadingChange={setIsLoading}
             />
           )}
-        </div>
+        </motion.div>
       )}
     </div>
   );
