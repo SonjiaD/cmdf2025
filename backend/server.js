@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken'); // For JWT authentication
+const axios = require('axios'); // For reCAPTCHA verification
 const User = require('./models/User'); // Import User model
 
 dotenv.config();
@@ -29,7 +31,7 @@ app.post('/api/register', async (req, res) => {
         const existingUser = await User.findOne({ username });
         if (existingUser) return res.status(400).json({ message: "Username already taken!" });
 
-        // Save user with plain text password (⚠️ Not Secure)
+        // Save user (⚠️ Plain text password - NOT SECURE for production)
         const newUser = new User({ username, password });
         await newUser.save();
 
@@ -39,21 +41,39 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
-// 🔹 Login User (Compare Plain Text Password)
+// 🔹 Login User with reCAPTCHA and JWT
 app.post('/api/auth/login', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, password, recaptchaToken } = req.body;
+
+        // Verify reCAPTCHA token
+        const recaptchaResponse = await axios.post(
+            `https://www.google.com/recaptcha/api/siteverify`,
+            {},
+            {
+                params: {
+                    secret: process.env.RECAPTCHA_SECRET_KEY,
+                    response: recaptchaToken,
+                },
+            }
+        );
+
+        if (!recaptchaResponse.data.success) {
+            return res.status(400).json({ message: "reCAPTCHA verification failed!" });
+        }
 
         // Find user in database
         const user = await User.findOne({ username });
-        if (!user) return res.status(400).json({ message: "Invalid username or password!" });
-
-        // Compare passwords (plain text check)
-        if (user.password !== password) {
+        if (!user || user.password !== password) {
             return res.status(400).json({ message: "Invalid username or password!" });
         }
 
-        res.status(200).json({ message: "Login successful!" });
+        // Generate JWT token
+        const token = jwt.sign({ id: user._id, username: user.username }, process.env.JWT_SECRET, {
+            expiresIn: "1h",
+        });
+
+        res.status(200).json({ message: "Login successful!", token });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
