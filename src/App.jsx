@@ -1,4 +1,3 @@
-import { useState } from "react";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -7,7 +6,6 @@ import Exercises from "./pages/Exercises";
 import Settings from "./pages/Settings";
 import Progress from "./pages/Progress";
 import SpeechToText from "./pages/SpeechToText";
-
 
 import Articulation from "./pages/Categories/Articulation";
 import Fluency from "./pages/Categories/Fluency";
@@ -28,8 +26,6 @@ function App() {
         <Route path="/language" element={<Language />} />
         <Route path="/understanding" element={<Understanding />} />
         <Route path="/speech-to-text" element={<SpeechToText />} />
-
-
       </Routes>
     </BrowserRouter>
   );

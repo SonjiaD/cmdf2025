@@ -12,7 +12,8 @@ function CloudFlare() {
       messages: [
         {
           role: "system",
-          content: "You are a friendly assistant that helps write stories",
+          content:
+            "You are a therapist for people with speech disorders (like those caused by stroke, cerebral palsy, or autism) who have difficulty accessing speech therapy services. ",
         },
         {
           role: "user",
