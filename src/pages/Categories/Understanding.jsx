@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import useProgressStore from "../../useProgressStore";
 import "../ProgressBar.css";
+import AlligatorImage from "../../assets/PGalligator.svg";
+import RainbowImage from "../../assets/PGrainbow.svg";
+import FootballImage from "../../assets/PGfootball.svg";
+import MMImage from "../../assets/PGm&m.svg";
+import CarrotImage from "../../assets/PGcarrot.svg";
 
 // Levenshtein Distance function to compare strings (text comparison)
 const getLevenshteinDistance = (a, b) => {
@@ -24,16 +29,7 @@ const getLevenshteinDistance = (a, b) => {
   return tmp[a.length][b.length];
 };
 
-// List of images to display
-const images = [
-    "PGalligator.svg",
-    "PGrainbow.svg",
-    "PGfootball.svg",
-    "PGm&m.svg",
-    "PGcarrot"
-  ];
-
-// List of words corresponding to the images
+// List of words associated with images
 const words = [
   "Alligator",
   "Rainbow",
@@ -41,6 +37,16 @@ const words = [
   "M&M",
   "Carrot"
 ];
+
+// List of images
+const images = [
+  AlligatorImage, 
+  RainbowImage, 
+  FootballImage, 
+  MMImage, 
+  CarrotImage
+];
+  
   
 const Understanding = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -48,7 +54,8 @@ const Understanding = () => {
   const [recognition, setRecognition] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
+  const [targetImage, setTargetImage] = useState(images[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);  // Track the current word
   const [currentDone, setCurrentDone] = useState(0); 
   const [attempts, setAttempts] = useState(0); // Track number of attempts
   const [requiredAccuracy, setRequiredAccuracy] = useState(80);
@@ -127,29 +134,36 @@ const Understanding = () => {
     if (currentDone < 4) {
       const nextIndex = randomInt();
       const nextDone = currentDone + 1;
-      setCurrentWordIndex(nextIndex);
+      setCurrentIndex(nextIndex);
       setCurrentDone(nextDone);
       setTargetWord(words[nextIndex]);
+      setTargetImage(images[nextIndex]);
       setTranscript("");
       setAccuracy(null);
     } else {
-      alert("You have completed all of the images! Great job!");
+      alert("You have completed all words! Great job!");
     }
   };
 
   return (
     <div className="p-4 text-center">
-      <h2 className="text-2xl font-bold">🎙️ Speech-to-Text Practice</h2>
+      <h2 className="text-2xl font-bold" style={{ marginTop: "150px" }}>🎙️ Image Identification</h2>
+
 
       {/* Display progress bar */}
       <div className="progress-container">
         <div className="progress-filler" style={{width: `${progress}%` }}>
         </div>
       </div>
+
+      {/* Display Image */}
+      <div className="mt-4">
+        <img src={targetImage} alt={targetWord} className="mx-auto h-40" />
+      </div>
       
       {/* Display current target word */}
       <div className="mt-4">
-        <h3 className="text-xl">Target Phrase: <span className="font-semibold">{targetWord}</span></h3>
+        <h3 className="text-xl">Target Descriptor: <span className="font-semibold">{targetWord}</span></h3>
       </div>
 
       <button
@@ -166,11 +180,11 @@ const Understanding = () => {
       {/* Display accuracy score */}
       {accuracy !== null && (
         <p className="mt-4">
-          <strong>Accuracy: </strong>{accuracy}% (Target Word: {targetWord})
+          <strong>Accuracy: </strong>{accuracy}% (Target Descriptor: {targetWord})
         </p>
       )}
 
-      {/* Button to go to the next image */}
+      {/* Button to go to the next word */}
       {accuracy >= requiredAccuracy && (
         <button
           onClick={function(event){handleNextWord(); increaseProgress();}}
