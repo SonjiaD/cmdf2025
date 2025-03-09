@@ -1,6 +1,6 @@
 /* chat container */
 .max-w-md {
-  max-width: 480px;
+  max-width: 450px;
   max-height: 550px;
   min-height: 550px;
   width: 100%;
@@ -15,7 +15,7 @@
 
   position: fixed;
   bottom: 20px;
-  margin-left: 800px;
+  margin-left: 750px;
   z-index: 9999;
 
   opacity: 1;
