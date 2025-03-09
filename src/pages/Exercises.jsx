@@ -18,9 +18,6 @@ function Exercises() {
     <>
       <img className="banner" src={exerciseBanner} alt="Exercise Banner" />
 
-      <div className="title-container">
-        <AnimatedHeading className="title" text="What would you like to learn?" />
-      </div>
 
       <div className="board">
         {exercises.map((exercise, index) => (
