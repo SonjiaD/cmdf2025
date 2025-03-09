@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import useProgressStore from "../useProgressStore";
 
 function Progress() {
-  //const [dailyProgress, setProgress] = useState(0);
-  //const {points} = useContext(ProgressContext);
-  //const { progress} = useProgressStore();
   const points = useProgressStore((state) => state.points);
 
   // needs to use saved weekly data
