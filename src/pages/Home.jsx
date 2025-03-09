@@ -35,7 +35,7 @@ function Home() {
               </p>
             </div>
             <div className="solution-item">
-              <h3 className="solution-item-title">Gamified Learning</h3>
+              <h3 className="solution-item-title">Gamified <br></br>  Learning</h3>
               <p className="solution-item-description">
                 Engaging exercises designed to motivate consistent practice through interactive challenges.
               </p>
