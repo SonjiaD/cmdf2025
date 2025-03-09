@@ -1,0 +1,34 @@
+
+/*styling for boxes*/
+.board-row-01 {
+    display: flex;
+    width: 513px;
+    height: 310px;
+    padding: 16px 27px;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  
+    border-radius: 30px;
+    background-color: #F8D3C3;
+  
+    /* Ensure the button takes up the full size of its container */
+    width: 100%;
+    height: 100%;
+    border: none; /* Optional: remove default border */
+    background-color: transparent; /* Optional: remove default background */
+  }
+  
+
+.board-row-02{
+    
+}
+
+
+.board-row-03{
+    
+}
+
+.board-row-04{
+    
+}
