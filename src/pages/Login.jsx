@@ -84,13 +84,15 @@ const Login = () => {
           <button type="submit" className="login-button">
             Login
           </button>
+          <button onClick={handleSkipLogin} className="login-button">
+          Skip Login
+          </button>
+
         </form>
         <p className="error-message">{message}</p>
 
         {/* Skip Login Button */}
-        <button onClick={handleSkipLogin} className="skip-button">
-          Skip Login
-        </button>
+       
       </div>
     </div>
   );
