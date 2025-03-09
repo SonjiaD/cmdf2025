@@ -2,7 +2,6 @@ import { useState } from "react";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ProgressBar from "./components/Progressbar";
 import Home from "./pages/Home";
 import Exercises from "./pages/Exercises";
 import Settings from "./pages/Settings";
