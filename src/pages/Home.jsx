@@ -2,7 +2,8 @@ import React from "react";
 import Layout from "../components/Layout";
 import AnimatedHeading from "../components/AnimatedHeading";
 import ContentBox from "../components/ContentBox";
-import SpeechToTextAndCloudFlare from "../components/SpeechToTextAndCloudFlare";
+import "./Home.css";
+import SpeechToTextAndCloudFlare from "../components/SpeechToTextAndCloudFlare.jsx";
 
 function Home() {
   return (
@@ -23,6 +24,9 @@ function Home() {
 
       {/* Chatbot Section */}
       <div className="mt-10 w-full max-w-3xl bg-white shadow-md rounded-2xl p-6 border-4 border-orange-300">
+        <h2 className="text-2xl font-semibold text-orange-500 mb-4 text-center">
+          Chat with Our AI Speech Therapy Assistant
+        </h2>
         <SpeechToTextAndCloudFlare />
       </div>
     </Layout>

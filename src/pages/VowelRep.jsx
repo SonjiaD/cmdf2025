@@ -27,10 +27,13 @@ const getLevenshteinDistance = (a, b) => {
 const words = [
     "Ba, Be, Bi, Bo, Bu",
     "Ca, Ce, Ci, Co, Cu",
+    "Da, De, Di, Do, Du",
     "Fa, Fe, Fi, Fo, Fu",
     "Ga, Ge, Gi, Go, Gu",
+    "Ha, He, Hi, Ho, Hu",
     "Ra, Re, Ri, Ro, Ru",
-    "Sa, Se, Si, So, Su"
+    "Sa, Se, Si, So, Su",
+    "Ta, Te, Ti, To, Tu",
   ];
   
 const VowelRep = () => {
@@ -40,6 +43,7 @@ const VowelRep = () => {
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
   const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
+  const [currentDone, setCurrentDone] = useState(0); 
   const { progress, increaseProgress, setMatchAccuracy } = useProgressStore();
 
   useEffect(() => {
@@ -95,10 +99,17 @@ const VowelRep = () => {
     }
   };
 
+  // calculate a random int between the 0th index and the length of the list - 1
+  function randomInt() {
+    return Math.floor(Math.random() * (words.length - 1));
+  }
+
   const handleNextWord = () => {
-    if (currentWordIndex < 4) {
-      const nextIndex = currentWordIndex + 1;
+    if (currentDone < 4) {
+      const nextIndex = randomInt();
+      const nextDone = currentDone + 1;
       setCurrentWordIndex(nextIndex);
+      setCurrentDone(nextDone);
       setTargetWord(words[nextIndex]);
       setTranscript("");
       setAccuracy(null);
