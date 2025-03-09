@@ -1,34 +1,22 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom";
+import '/src/CSS/Fluency.css';
 
 function Fluency() {
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   const goToBreathing = () => {
-    navigate("/breathe"); // Navigate to the "breathe" page
+    navigate("/breathe"); 
   };
 
   return (
     <div>
-      <h1>Fluency practice</h1>
-      <button style={styles.button}>Slow speech</button>
-      <button style={styles.button} onClick={goToBreathing}>Deep breathing</button>
-      <button style={styles.button}>Pausing</button>
+      <h1 className="title">Fluency practice</h1>
+      <button className="button button1">Slow speech</button>
+      <button className="button button2" onClick={goToBreathing}>Deep breathing</button>
+      <button className="button button3">Pausing</button>
     </div>
   );
 }
-
-const styles = {
-  button: {
-    backgroundColor: "#007BFF",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    padding: "10px 20px",
-    margin: "10px",
-    cursor: "pointer",
-    fontSize: "16px",
-  },
-};
 
 export default Fluency;

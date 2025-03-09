@@ -1,0 +1,31 @@
+
+.title{
+    font-size: 36px;
+}
+
+.button {
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 42px 32px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .button1 {
+    background-color: #F8D3C3; /* Blue */
+  }
+  
+  .button2 {
+    background-color: #D2DED4; /* Green */
+  }
+  
+  .button3 {
+    background-color: #E0E2CC; /* Yellow */
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+  
