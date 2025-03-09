@@ -10,7 +10,7 @@ export const run = async (model, input) => {
                 headers: {
                     Authorization: `Bearer ${API_TOKEN}`
                 },
-                withCredentials: true,
+                // withCredentials: true,
             }
         );
         return response.data;

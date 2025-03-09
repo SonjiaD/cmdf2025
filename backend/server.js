@@ -8,7 +8,7 @@ const User = require('./models/User'); // Import User model
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -57,6 +57,9 @@ app.post('/api/auth/login', async (req, res) => {
                 },
             }
         );
+
+
+        console.log("res", recaptchaResponse.data);
 
         if (!recaptchaResponse.data.success) {
             return res.status(400).json({ message: "reCAPTCHA verification failed!" });
