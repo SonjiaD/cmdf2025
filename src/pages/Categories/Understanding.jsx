@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import useProgressStore from "../../useProgressStore";
 import "../ProgressBar.css";
+import AlligatorImage from "../../assets/PGalligator.svg";
+import RainbowImage from "../../assets/PGrainbow.svg";
+import FootballImage from "../../assets/PGfootball.svg";
+import MMImage from "../../assets/PGm&m.svg";
+import CarrotImage from "../../assets/PGcarrot.svg";
 
 // Levenshtein Distance function to compare strings (text comparison)
 const getLevenshteinDistance = (a, b) => {
@@ -24,16 +29,7 @@ const getLevenshteinDistance = (a, b) => {
   return tmp[a.length][b.length];
 };
 
-// List of images to display
-const images = [
-    "PGalligator.svg",
-    "PGrainbow.svg",
-    "PGfootball.svg",
-    "PGm&m.svg",
-    "PGcarrot"
-  ];
-
-// List of words corresponding to the images
+// List of consonant & vowel pairings
 const words = [
   "Alligator",
   "Rainbow",
@@ -42,13 +38,14 @@ const words = [
   "Carrot"
 ];
   
+  
 const Understanding = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [recognition, setRecognition] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
   const [targetWord, setTargetWord] = useState(words[0]);  // Start with the first word
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);  // Track the current word
+  const [currentWordIndex, setCurrentIndex] = useState(0);  // Track the current word
   const [currentDone, setCurrentDone] = useState(0); 
   const [attempts, setAttempts] = useState(0); // Track number of attempts
   const [requiredAccuracy, setRequiredAccuracy] = useState(80);
@@ -127,13 +124,13 @@ const Understanding = () => {
     if (currentDone < 4) {
       const nextIndex = randomInt();
       const nextDone = currentDone + 1;
-      setCurrentWordIndex(nextIndex);
+      setCurrentIndex(nextIndex);
       setCurrentDone(nextDone);
       setTargetWord(words[nextIndex]);
       setTranscript("");
       setAccuracy(null);
     } else {
-      alert("You have completed all of the images! Great job!");
+      alert("You have completed all words! Great job!");
     }
   };
 
@@ -170,13 +167,13 @@ const Understanding = () => {
         </p>
       )}
 
-      {/* Button to go to the next image */}
+      {/* Button to go to the next word */}
       {accuracy >= requiredAccuracy && (
         <button
           onClick={function(event){handleNextWord(); increaseProgress();}}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
         >
-          Next Image
+          Next Phrase
         </button>
       )}
       

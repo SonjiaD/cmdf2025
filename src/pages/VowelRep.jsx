@@ -134,7 +134,7 @@ const VowelRep = () => {
 
   return (
     <div className="p-4 text-center">
-      <h2 className="text-2xl font-bold">🎙️ Speech-to-Text Practice</h2>
+      <h2 className="text-2xl font-bold">🎙️ Consonant-Vowel Repetition</h2>
 
       {/* Display progress bar */}
       <div className="progress-container">
