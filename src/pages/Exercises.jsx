@@ -1,14 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Exercises.css";
+import AnimatedHeading from "../components/AnimatedHeading";
+
 
 function Exercises() {
   const navigate = useNavigate();
 
   return (
     <>
-      <h3 className="exercises-Title">What would you like to work on today?</h3>
-      <div className="board-row">
+      
+      
+      <div className="title-container">
+      <div className="text-container">
+        <AnimatedHeading className="title" text="What would you like to learn?" />
+      </div>
+    </div>      
+
+<div className="board-row">
         <button
           className="board-box board-box-articulation"
           onClick={() => navigate("/speech-to-text")}

@@ -3,20 +3,22 @@ import { Link } from "react-router-dom";
 import './Navbar.css'
 
 /*importing icons*/
-import homeIcon from "/src/assets/home.svg"; 
+import homeIcon from "/src/assets/home.svg"; // Correct path to your SVG file
 import exercisesIcon from "/src/assets/exercise.svg";
 import progressIcon from "/src/assets/progress.svg";
 import settingsIcon from "/src/assets/settings.svg"; 
-
 
 function Navbar() {
   return (
     
     <nav className="navbar">
       <ul>
-        <li>
-          <Link to="/" className="navbar-Title">Pr0nunc!ate</Link>
-        </li>
+      <li> 
+        <Link to="/" className="navbar-Title" style={{ fontSize: '35px' }}>
+          Pr0nunc!ate
+        </Link>
+      </li>
+
         <li>
           <Link to="/">
           <img src={homeIcon} alt="Home"/>
